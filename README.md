@@ -1,3 +1,16 @@
+# 版本
+
+## hugo
+
+```
+hugo version
+hugo v0.147.8-10da2bd765d227761641f94d713d094e88b920ae+extended+withdeploy darwin/arm64 BuildDate=2025-06-07T12:59:52Z VendorInfo=gohugoio
+```
+
+## LoveIt
+
+v0.3.0
+
 # 文档
 
 最有用的文档应该是[这个](https://hugoloveit.com/categories/documentation/)
