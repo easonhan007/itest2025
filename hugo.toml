@@ -1,5 +1,4 @@
-baseURL = "http://example.org/"
-
+baseURL = 'https://easonhan007.github.io/itest2025'
 
 # Change the default theme to be use when building the site with Hugo
 
