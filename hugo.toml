@@ -117,7 +117,7 @@ title = ""
 
 [[menu.main]]
 
-weight = 5
+weight = 6
 
 identifier = "playwright"
 
@@ -128,6 +128,22 @@ post = ""
 name = "playwright"
 
 url = "https://playwright.itest.info/"
+
+title = ""
+
+[[menu.main]]
+
+weight = 5
+
+identifier = "video"
+
+pre = ""
+
+post = ""
+
+name = "视频教程"
+
+url = "/video/"
 
 title = ""
 
@@ -537,7 +553,7 @@ Reddit = false
 VK = false
 Buffer = false
 Xing = false
-Line = true
+Line = false
 Instapaper = false
 Pocket = false
 Flipboard = false
