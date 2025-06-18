@@ -5,7 +5,6 @@ baseURL = "http://example.org/"
 
 theme = "LoveIt"
 
-
 # website title
 
 # 是否包括中日韩文字
@@ -71,7 +70,7 @@ title = ""
 
 [[menu.main]]
 
-weight = 2
+weight = 4
 
 identifier = "tags"
 
@@ -103,7 +102,7 @@ title = ""
 
 [[menu.main]]
 
-weight = 4
+weight = 2
 
 identifier = "tutorials"
 
@@ -114,6 +113,22 @@ post = ""
 name = "图文教程"
 
 url = "/tutorials/"
+
+title = ""
+
+[[menu.main]]
+
+weight = 5
+
+identifier = "playwright"
+
+pre = ""
+
+post = ""
+
+name = "playwright"
+
+url = "https://playwright.itest.info/"
 
 title = ""
 
@@ -206,7 +221,7 @@ author = true
 since = 2010
 # ICP info only in China (HTML format is supported)
 # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
-icp = ""
+icp = "粤ICP备17097242号"
 # license info (HTML format is supported)
 # 许可协议信息 (支持 HTML 格式)
 license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
