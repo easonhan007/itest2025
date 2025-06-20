@@ -14,7 +14,7 @@ authorLink = "https://example.com/author"
 
 ![](https://images.unsplash.com/photo-1746730406177-f8562813b938?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
-# Google 的测试文化：从危机到规模化的演进之路
+## Google 的测试文化：从危机到规模化的演进之路
 
 ### Google Web Server (GWS) 的觉醒时刻
 
@@ -106,7 +106,7 @@ authorLink = "https://example.com/author"
 
 Google 规模化的自动化测试不仅仅是大力出奇迹——它关乎智能基础设施、文化纪律以及对工程卓越的深度承诺。
 
-# Bug 管理系统该如何设计
+## Bug 管理系统该如何设计
 
 上周看到了[科技爱好者周刊](https://www.ruanyifeng.com/blog/2025/06/weekly-issue-352.html)讨论了这个问题，觉得深有启发。
 
@@ -157,7 +157,7 @@ Bug 追踪系统应该足够灵活，可以自定义优先级、严重程度、�
 
 所以在有条件的情况下，还是使用缺陷管理系统吧，这个对缺陷的跟踪以及工作效率的提升都有正向的收益。
 
-# pydoll 最方便使用的自动化测试工具
+## pydoll 最方便使用的自动化测试工具
 
 在使用 selenium 的时候，有个比较大的痛点是随着本机安装的浏览器的更新，各种驱动，比如 chromedriver 也需要同步更新。
 
@@ -227,7 +227,7 @@ asyncio.run(main())
 
 可以看到，除了 async 和 await 之外，代码的写法跟 selenium 是极其类似的。
 
-# 言论
+## 言论
 
 来自[这篇文章](https://medium.com/@contextdependence/orienting-test-planning-c72a84a98b46)
 
