@@ -1,16 +1,18 @@
 +++
 date = '2025-06-19T10:12:22+08:00'
-draft = true
+draft = false
 title = '测试周刊005: Google是怎么做测试的'
 weight= 1
 tags = ["测试周刊"]
+author =  "乙醇"
+authorLink = "https://example.com/author"
 +++
 
 在 Google 早期，测试并不是首要任务。公司文化高度依赖工程师的才华——聪明的人写聪明的代码。大多数情况下，这种方式都很有效。少数系统部署了集成测试，但广泛的、结构化的测试极其罕见。这就像软件开发的"狂野西部"时代。
 
 <!--more-->
 
-![](https://images.unsplash.com/photo-1746730406177-f8562813b938?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![](https://images.unsplash.com/photo-1746730406177-f8562813b938?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ## Google 的测试文化：从危机到规模化的演进之路
 
