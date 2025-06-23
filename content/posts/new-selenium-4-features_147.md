@@ -5,15 +5,15 @@ date: 2024-08-12T23:32:36+08:00
 lastmod: 2024-08-12T23:32:36+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "selenium 4 的新功能，不是非常惊喜，不过确实比较实用了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1600262300671-295cb21f4d06?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1600262300671-295cb21f4d06?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -23,7 +23,7 @@ toc:
 
 selenium 4 的新功能，不是非常惊喜，不过确实比较实用了。
 
-在瞬息万变的网络自动化领域,Selenium 一直是主要参与者。随着 Selenium 4 的发布,其功能得到进一步增强,引入了前沿特性,简化了测试流程并提高了效率。Chrome DevTools 和 BiDi API 的集成不仅增强了selenium的技术能力,还为管理自动化项目的经理们带来了战略价值。
+在瞬息万变的网络自动化领域,Selenium 一直是主要参与者。随着 Selenium 4 的发布,其功能得到进一步增强,引入了前沿特性,简化了测试流程并提高了效率。Chrome DevTools 和 BiDi API 的集成不仅增强了 selenium 的技术能力,还为管理自动化项目的经理们带来了战略价值。
 
 ## Chrome DevTools 协议:深入浏览器自动化
 
@@ -41,27 +41,27 @@ Selenium 4 与 **Chrome DevTools 协议** (**CDP**) 的集成为自动化测试�
 > 启用网络拦截的示例代码:
 
 ```java
-public class ChromeDevToolsExample {  
-    public static void main(String[] args) {  
+public class ChromeDevToolsExample {
+    public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        ChromeOptions options = new ChromeOptions();  
+        ChromeOptions options = new ChromeOptions();
         ChromeDriver driver = new ChromeDriver(options);
 
-        DevTools devTools = driver.getDevTools();  
+        DevTools devTools = driver.getDevTools();
         devTools.createSession();
 
-        // 启用网络  
+        // 启用网络
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 
-        // 添加网络请求监听器  
-        devTools.addListener(Network.requestWillBeSent(), request -> {  
-            System.out.println("请求 URL: " + request.getRequest().getUrl());  
+        // 添加网络请求监听器
+        devTools.addListener(Network.requestWillBeSent(), request -> {
+            System.out.println("请求 URL: " + request.getRequest().getUrl());
         });
 
         driver.get("https://www.example.com");
 
-        driver.quit();  
-    }  
+        driver.quit();
+    }
 }
 ```
 
@@ -83,23 +83,23 @@ public class ChromeDevToolsExample {
 > BiDi 实现的示例代码:
 
 ```java
-public class BiDiExample {  
-    public static void main(String[] args) {  
+public class BiDiExample {
+    public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        ChromeOptions options = new ChromeOptions();  
+        ChromeOptions options = new ChromeOptions();
         ChromeDriver driver = new ChromeDriver(options);
 
-        DevTools devTools = driver.getDevTools();  
+        DevTools devTools = driver.getDevTools();
         devTools.createSession();
 
-        // 使用 BiDi API 执行 JavaScript 代码 
-        Runtime.EvaluateParameters params = new Runtime.EvaluateParameters("document.title");  
+        // 使用 BiDi API 执行 JavaScript 代码
+        Runtime.EvaluateParameters params = new Runtime.EvaluateParameters("document.title");
         String result = devTools.send(Runtime.evaluate(params)).getResult().getValue().toString();
 
         System.out.println("页面标题: " + result);
 
-        driver.quit();  
-    }  
+        driver.quit();
+    }
 }
 ```
 
@@ -108,112 +108,112 @@ public class BiDiExample {
 > 实时 DOM 操作的示例代码:
 
 ```java
-public class LiveDOMManipulation {  
-    public static void main(String[] args) {  
-        ChromeOptions options = new ChromeOptions();  
-        WebDriver driver = new ChromeDriver(options);  
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();  
+public class LiveDOMManipulation {
+    public static void main(String[] args) {
+        ChromeOptions options = new ChromeOptions();
+        WebDriver driver = new ChromeDriver(options);
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
         driver.get("https://example.com");
 
         WebElement element = driver.findElement(By.id("elementId"));
 
-        // 启用 DOM 
+        // 启用 DOM
         devTools.send(DOM.enable());
 
-        // 获取节点 ID  
+        // 获取节点 ID
         int nodeId = devTools.send(DOM.getDocument()).getRoot().getNodeId();
 
-        // 使用 CDP 设置背景颜色  
+        // 使用 CDP 设置背景颜色
         devTools.send(DOM.setAttributeValue(nodeId, "style", "background-color: yellow;"));
 
-        // 向 DOM 添加新元素  
-        String script = "let newElement = document.createElement('div'); newElement.innerHTML = 'Hello, World!'; document.body.appendChild(newElement);";  
+        // 向 DOM 添加新元素
+        String script = "let newElement = document.createElement('div'); newElement.innerHTML = 'Hello, World!'; document.body.appendChild(newElement);";
         ((ChromeDriver) driver).executeScript(script);
 
-        driver.quit();  
-    }  
+        driver.quit();
+    }
 }
 ```
 
 > 拦截网络请求的代码:
 
 ```java
-public class NetworkActivity {  
-    public static void main(String[] args) {  
-        // 设置 ChromeDriver 和 DevTools  
-        ChromeOptions options = new ChromeOptions();  
-        WebDriver driver = new ChromeDriver(options);  
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();  
+public class NetworkActivity {
+    public static void main(String[] args) {
+        // 设置 ChromeDriver 和 DevTools
+        ChromeOptions options = new ChromeOptions();
+        WebDriver driver = new ChromeDriver(options);
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
 
-        // 启用网络跟踪  
+        // 启用网络跟踪
         devTools.send(Network.enable());
 
-        // 添加请求和响应监听器  
-        devTools.addListener(Network.requestWillBeSent(), request -> {  
-            Request req = request.getRequest();  
-            System.out.println("请求 URL: " + req.getUrl());  
-            System.out.println("请求方法: " + req.getMethod());  
+        // 添加请求和响应监听器
+        devTools.addListener(Network.requestWillBeSent(), request -> {
+            Request req = request.getRequest();
+            System.out.println("请求 URL: " + req.getUrl());
+            System.out.println("请求方法: " + req.getMethod());
         });
 
-        devTools.addListener(Network.responseReceived(), response -> {  
-            Response res = response.getResponse();  
-            System.out.println("响应 URL: " + res.getUrl());  
-            System.out.println("响应状态: " + res.getStatus());  
+        devTools.addListener(Network.responseReceived(), response -> {
+            Response res = response.getResponse();
+            System.out.println("响应 URL: " + res.getUrl());
+            System.out.println("响应状态: " + res.getStatus());
         });
 
-        // 导航到网站  
+        // 导航到网站
         driver.get("https://www.example.com");
 
-        // 关闭浏览器  
-        driver.quit();  
-    }  
+        // 关闭浏览器
+        driver.quit();
+    }
 }
 ```
 
 > 获取性能指标
 
 ```java
-public class PerformanceMetricsOverTime {  
-    public static void main(String[] args) {  
-        // 设置 ChromeDriver 和 DevTools  
-        ChromeOptions options = new ChromeOptions();  
-        WebDriver driver = new ChromeDriver(options);  
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();  
+public class PerformanceMetricsOverTime {
+    public static void main(String[] args) {
+        // 设置 ChromeDriver 和 DevTools
+        ChromeOptions options = new ChromeOptions();
+        WebDriver driver = new ChromeDriver(options);
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
 
-        // 启用性能监控  
+        // 启用性能监控
         devTools.send(Performance.enable());
 
-        // 导航到网站  
+        // 导航到网站
         driver.get("https://www.example.com");
 
-        // 定时器每5秒捕获一次性能指标  
-        Timer timer = new Timer();  
-        timer.schedule(new TimerTask() {  
-            @Override  
-            public void run() {  
-                List<Metric> metrics = devTools.send(Performance.getMetrics());  
-                System.out.println("捕获的性能指标:");  
-                for (Metric metric : metrics) {  
-                    System.out.println(metric.getName() + ": " + metric.getValue());  
-                }  
-                System.out.println();  
-            }  
+        // 定时器每5秒捕获一次性能指标
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                List<Metric> metrics = devTools.send(Performance.getMetrics());
+                System.out.println("捕获的性能指标:");
+                for (Metric metric : metrics) {
+                    System.out.println(metric.getName() + ": " + metric.getValue());
+                }
+                System.out.println();
+            }
         }, 0, 5000);  // 初始延迟0毫秒,每5000毫秒(5秒)重复一次
 
-        // 运行测试一段特定时间(例如1分钟)然后停止  
-        try {  
-            Thread.sleep(60000);  // 运行60秒  
-        } catch (InterruptedException e) {  
-            e.printStackTrace();  
+        // 运行测试一段特定时间(例如1分钟)然后停止
+        try {
+            Thread.sleep(60000);  // 运行60秒
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
-        // 停止定时器并关闭浏览器  
-        timer.cancel();  
-        driver.quit();  
-    }  
+        // 停止定时器并关闭浏览器
+        timer.cancel();
+        driver.quit();
+    }
 }
 ```
 

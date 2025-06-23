@@ -5,15 +5,15 @@ date: 2024-03-08T09:01:58+08:00
 lastmod: 2024-03-08T09:01:58+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "现在用的人比较多了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1653363411414-c002ff2f0f86?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1653363411414-c002ff2f0f86?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,11 +21,11 @@ toc:
   auto: false
 ---
 
-python的requests库由于其使用简单，文档丰富成为了很多人在发送http请求时候的优选选择。前几天看到了一个类似的实现httpx，在这里简单使用体验一下，顺便简单分享一下体验心得。
+python 的 requests 库由于其使用简单，文档丰富成为了很多人在发送 http 请求时候的优选选择。前几天看到了一个类似的实现 httpx，在这里简单使用体验一下，顺便简单分享一下体验心得。
 
-相比较requests，httpx支持sync和async的API，支持http1.1和http2。httpx尽最大努力兼容requests的API，这样一来用户从requests转换到httpx的成本就相对较为低廉了。
+相比较 requests，httpx 支持 sync 和 async 的 API，支持 http1.1 和 http2。httpx 尽最大努力兼容 requests 的 API，这样一来用户从 requests 转换到 httpx 的成本就相对较为低廉了。
 
-### 基本API
+### 基本 API
 
 ```python
 >>> import httpx
@@ -40,7 +40,7 @@ python的requests库由于其使用简单，文档丰富成为了很多人在发
 '<!doctype html>\n<html>\n<head>\n<title>Example Domain</title>...'
 ```
 
-简单扫一圈，满眼都是requests当年的样子。下面是requests的API，大家来找茬，看看哪里不一样。
+简单扫一圈，满眼都是 requests 当年的样子。下面是 requests 的 API，大家来找茬，看看哪里不一样。
 
 ```python
 >>> import requests
@@ -61,9 +61,9 @@ python的requests库由于其使用简单，文档丰富成为了很多人在发
 
 ### httpx client
 
-requests为一组http请求提供了session对象来进行统一设置和管理，httpx则相应的提供了client对象。我们来对比一下使用方式先。
+requests 为一组 http 请求提供了 session 对象来进行统一设置和管理，httpx 则相应的提供了 client 对象。我们来对比一下使用方式先。
 
-首先使用starlette来创建一个简单的python api服务。starlette项目可以想象成是async版本的flask，跟httpx系出同门。
+首先使用 starlette 来创建一个简单的 python api 服务。starlette 项目可以想象成是 async 版本的 flask，跟 httpx 系出同门。
 
 ```python
 # example.py
@@ -83,13 +83,13 @@ routes = [
 app = Starlette(debug=False, routes=routes)
 ```
 
-使用uvicorn运行。
+使用 uvicorn 运行。
 
 ```bash
 $ uvicorn example:app
 ```
 
-上面的服务提供了1个接口localhost:8000，返回值如下
+上面的服务提供了 1 个接口 localhost:8000，返回值如下
 
 ```bash
 http :8000
@@ -105,9 +105,9 @@ server: uvicorn
 }
 ```
 
-我们先用非client/session方式来访问该接口30次，顺便统计一下运行时间
+我们先用非 client/session 方式来访问该接口 30 次，顺便统计一下运行时间
 
-requests先出场。
+requests 先出场。
 
 ```python
 # without_session
@@ -122,9 +122,9 @@ for i in range(0,30):
 python without_session.py  0.24s user 0.08s system 9% cpu 3.500 total
 ```
 
-上面是不用session的方式，3.5s完成。
+上面是不用 session 的方式，3.5s 完成。
 
-使用session试试。
+使用 session 试试。
 
 ```python
 import requests
@@ -142,7 +142,7 @@ python with_session.py  0.22s user 0.08s system 8% cpu 3.443 total
 
 3.44s，快了一点点。
 
-下面是httpx不使用client的方式。
+下面是 httpx 不使用 client 的方式。
 
 ```python
 python without_client.py  0.69s user 0.11s system 20% cpu 3.972 total
@@ -150,7 +150,7 @@ python without_client.py  0.69s user 0.11s system 20% cpu 3.972 total
 
 3.9s。
 
-使用client试试
+使用 client 试试
 
 ```python
 import httpx
@@ -167,11 +167,11 @@ python with_client.py  0.38s user 0.11s system 13% cpu 3.707 total
 
 3.7s，也快了一些。
 
-这里可以简单总结一下，使用client/session可以提升一组请求的发送效率，另外也提供了进行统一配置（比如修改header的）的快捷方式。上面的测试由于请求处理的太快效果不是很明显，在日常的测试中两种方式的区别可能会更加容易发现一些。
+这里可以简单总结一下，使用 client/session 可以提升一组请求的发送效率，另外也提供了进行统一配置（比如修改 header 的）的快捷方式。上面的测试由于请求处理的太快效果不是很明显，在日常的测试中两种方式的区别可能会更加容易发现一些。
 
 ### async
 
-还是30个请求，这次我们用httpx的async方式来试试。
+还是 30 个请求，这次我们用 httpx 的 async 方式来试试。
 
 ```python
 import asyncio
@@ -182,16 +182,16 @@ async def send_requests(client):
 	r = await client.get('http://localhost:8000')
 	print(r.json())
 	return r.json()
-		
+
 
 async def main():
-	tasks = []	
+	tasks = []
 	async with httpx.AsyncClient() as client:
 		for i in range(0, 30):
 			tasks.append(send_requests(client))
 
 		await asyncio.gather(*tasks)
-			
+
 
 asyncio.run(main())
 ```
@@ -200,8 +200,8 @@ asyncio.run(main())
 python httpx_async.py  0.47s user 0.13s system 71% cpu 0.848 total
 ```
 
-0.84秒，这大概就是httpx的最终奥义吧。
+0.84 秒，这大概就是 httpx 的最终奥义吧。
 
 ### 总结
 
-作为下一代的http client，httpx出自名门望族(其开发团队开发了**[django-rest-framework](https://github.com/encode/django-rest-framework)**)，兼容了部分的requests api，支持async操作等，是具有取代requests的能力的，在爬虫场景非常有潜力。
+作为下一代的 http client，httpx 出自名门望族(其开发团队开发了**[django-rest-framework](https://github.com/encode/django-rest-framework)**)，兼容了部分的 requests api，支持 async 操作等，是具有取代 requests 的能力的，在爬虫场景非常有潜力。

@@ -5,7 +5,7 @@ title = '测试周刊005: Google是怎么做测试的'
 weight= 1
 tags = ["测试周刊"]
 author =  "乙醇"
-authorLink = "https://example.com/author"
+authorLink = "https://github.com/easonhan007"
 +++
 
 在 Google 早期，测试并不是首要任务。公司文化高度依赖工程师的才华——聪明的人写聪明的代码。大多数情况下，这种方式都很有效。少数系统部署了集成测试，但广泛的、结构化的测试极其罕见。这就像软件开发的"狂野西部"时代。

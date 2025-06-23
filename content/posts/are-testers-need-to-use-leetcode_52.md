@@ -5,15 +5,15 @@ date: 2024-03-08T09:02:51+08:00
 lastmod: 2024-03-08T09:02:51+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "还是有必要的吧"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -35,7 +35,7 @@ toc:
 
 ### 管理岗位
 
-管理岗位的话一般来说不用刷题，因为管理者可能很多年都没写过代码了，实在是霸王硬上弓的话可能会让场面一度显得比较尴尬。不过不写不意味着就可以不知道，数据结构和算法应该有所了解，比如merge sort写不出来具体的实现，但是其过程和原理应该是可以表述清楚的。算法的话可以了解一些简单的，数据结构也是从二叉树开始，结束在你没有时间去了解的地方。
+管理岗位的话一般来说不用刷题，因为管理者可能很多年都没写过代码了，实在是霸王硬上弓的话可能会让场面一度显得比较尴尬。不过不写不意味着就可以不知道，数据结构和算法应该有所了解，比如 merge sort 写不出来具体的实现，但是其过程和原理应该是可以表述清楚的。算法的话可以了解一些简单的，数据结构也是从二叉树开始，结束在你没有时间去了解的地方。
 
 ### 测试开发
 
@@ -43,4 +43,4 @@ toc:
 
 ### 其他测试相关岗位
 
-比如pmo，qa等质量度量和流程管理类的角色，其核心竞争力与刷题无关，不刷是完全没问题的。
+比如 pmo，qa 等质量度量和流程管理类的角色，其核心竞争力与刷题无关，不刷是完全没问题的。

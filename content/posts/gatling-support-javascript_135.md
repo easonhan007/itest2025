@@ -5,15 +5,15 @@ date: 2024-05-31T00:44:33+08:00
 lastmod: 2024-05-31T00:44:33+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "活久见!性能测试工具Gatling支持javascript了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

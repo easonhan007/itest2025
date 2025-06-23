@@ -5,15 +5,15 @@ date: 2024-03-08T09:02:31+08:00
 lastmod: 2024-03-08T09:02:31+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "什么是探索测试"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -23,7 +23,7 @@ toc:
 
 原文地址: https://www.stickyminds.com/article/exploratory-testing-why-it-not-ideal-agile-projects
 
-下面是gpt4的总结。
+下面是 gpt4 的总结。
 
 探索性测试是一种灵活的测试方法，它不需要预先定义测试用例，而是让测试人员根据自己的判断和发现来设计和执行测试。探索性测试有以下优点：
 

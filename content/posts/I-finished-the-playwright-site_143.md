@@ -5,15 +5,15 @@ date: 2024-07-18T12:48:10+08:00
 lastmod: 2024-07-18T12:48:10+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "高强度肝了两周，第1个playwright中文教程站终于诞生了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

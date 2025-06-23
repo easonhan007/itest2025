@@ -5,15 +5,15 @@ date: 2024-03-08T09:02:34+08:00
 lastmod: 2024-03-08T09:02:34+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "值得收藏"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,7 +21,7 @@ toc:
   auto: false
 ---
 
-测试计划在国内其实不是很流行。之前在外企工作的时候，每一次的测试工作基本上都是以编写测试计划开始的。好的测试计划可以让团队成员对测试整体进行和测试策略以及方法有一个大体的认识，在一定程度上可以节约沟通成本。最近正好在github上看到一份测试计划文档，我们就一起来学习一下其中的精华吧。项目地址：[https://github.com/fityanos/awesome-quality-assurance-roadmap#test-plan-sample](https://github.com/fityanos/awesome-quality-assurance-roadmap#test-plan-sample)
+测试计划在国内其实不是很流行。之前在外企工作的时候，每一次的测试工作基本上都是以编写测试计划开始的。好的测试计划可以让团队成员对测试整体进行和测试策略以及方法有一个大体的认识，在一定程度上可以节约沟通成本。最近正好在 github 上看到一份测试计划文档，我们就一起来学习一下其中的精华吧。项目地址：[https://github.com/fityanos/awesome-quality-assurance-roadmap#test-plan-sample](https://github.com/fityanos/awesome-quality-assurance-roadmap#test-plan-sample)
 
 ## 1 介绍
 
@@ -31,7 +31,7 @@ toc:
 
 ### 1.2 读者
 
-描述一下读者人群，比如来自A团队的alice以及来自B团队的bob
+描述一下读者人群，比如来自 A 团队的 alice 以及来自 B 团队的 bob
 
 ## 2 测试策略
 
@@ -45,7 +45,7 @@ toc:
 
 ### 2.3 测试原则
 
-比如所有bug必须fix之类的原则性的东西
+比如所有 bug 必须 fix 之类的原则性的东西
 
 ### 2.4 测试范围和级别
 
@@ -54,7 +54,7 @@ toc:
 - 功能测试范围和时间以及交付物
 - 性能测试范围和时间以及交付物
 - 回归测试范围和时间以及交付物
-- UAT测试的范围和时间以及交付物
+- UAT 测试的范围和时间以及交付物
 
 ### 2.5 LOE(level of effort)
 
@@ -66,7 +66,7 @@ toc:
 
 ### 3.1 开始和退出条件
 
-比如功能测试的开始条件是产品体验通过和开发自测通过，结束的条件是所有的bug都被fix
+比如功能测试的开始条件是产品体验通过和开发自测通过，结束的条件是所有的 bug 都被 fix
 
 ### 3.2 测试轮次
 
@@ -84,7 +84,7 @@ toc:
 
 ### 3.4 缺陷的追踪及报告
 
-这里定义bug的生命周期。
+这里定义 bug 的生命周期。
 
 ![%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%20fb24f300af014335945a795002909ca8/Untitled%202.png](%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%20fb24f300af014335945a795002909ca8/Untitled%202.png)
 
@@ -96,7 +96,7 @@ toc:
 
 ### 4.3 测试风险以及依赖方
 
-这里需要提前考虑清楚测试风险以及依赖方，最重要的是需要找到back up，先把退路想好。
+这里需要提前考虑清楚测试风险以及依赖方，最重要的是需要找到 back up，先把退路想好。
 
 ![%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%20fb24f300af014335945a795002909ca8/Untitled%203.png](%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%20fb24f300af014335945a795002909ca8/Untitled%203.png)
 
@@ -104,7 +104,7 @@ toc:
 
 ## 5 测试环境
 
-这里可以描述测试环境的详细信息，比如测试环境的配置以及数据库情况，staging环境的相关情况，因为staging可能用的是线上正式库。
+这里可以描述测试环境的详细信息，比如测试环境的配置以及数据库情况，staging 环境的相关情况，因为 staging 可能用的是线上正式库。
 
 ## 6 排期和交付
 

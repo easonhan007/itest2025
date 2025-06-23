@@ -5,15 +5,15 @@ date: 2024-06-30T13:41:44+08:00
 lastmod: 2024-06-30T13:41:44+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "人人都要会的工具之--curl"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

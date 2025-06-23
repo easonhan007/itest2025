@@ -5,15 +5,15 @@ date: 2024-03-08T09:03:07+08:00
 lastmod: 2024-03-08T09:03:07+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "原理比较简单"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1522198684868-88edd8463fc9?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1522198684868-88edd8463fc9?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

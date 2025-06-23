@@ -5,15 +5,15 @@ date: 2024-07-12T01:26:34+08:00
 lastmod: 2024-07-12T01:26:34+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "我创建了一个playwright的教程及资讯站:playwright.itest.info"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1720983590448-28b749bd403d?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1720983590448-28b749bd403d?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

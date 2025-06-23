@@ -5,15 +5,15 @@ date: 2024-06-30T13:31:24+08:00
 lastmod: 2024-06-30T13:31:24+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "2024年最值得学习的自动化测试工具"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

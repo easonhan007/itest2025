@@ -5,15 +5,15 @@ date: 2024-03-08T09:04:23+08:00
 lastmod: 2024-03-08T09:04:23+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "很多都说到了点子上，不能赞同更多"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1549088521-94b6502fec3d?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1549088521-94b6502fec3d?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -45,8 +45,7 @@ toc:
 
 9. 首先为对应用影响最大的方法编写测试:将测试工作集中在对应用影响最大的方法上。这通常包括包含复杂逻辑或与外部资源交互的方法。
 
-10. **使用 AAA 模式**:准备测试数据和测试环境(Arrange)、执行(Act)、断言(Assert)是编写单元测试的典型模式。单元测试方法的安排部分初始化对象和传递给被测试方法的数据值。执行部分调用带有Arrange参数的被测试方法。断言部分验证被测试方法的行为符合预期。(划重点)
-
+10. **使用 AAA 模式**:准备测试数据和测试环境(Arrange)、执行(Act)、断言(Assert)是编写单元测试的典型模式。单元测试方法的安排部分初始化对象和传递给被测试方法的数据值。执行部分调用带有 Arrange 参数的被测试方法。断言部分验证被测试方法的行为符合预期。(划重点)
 
 原文如下:
 

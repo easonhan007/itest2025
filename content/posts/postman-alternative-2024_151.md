@@ -5,15 +5,15 @@ date: 2024-09-13T02:02:30+08:00
 lastmod: 2024-09-13T02:02:30+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "差不多每个季度都能看到有人求推荐"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -85,7 +85,7 @@ https://jmeter.apache.org/
 - Playwright API: 还是要写代码
 - Supertest - 与 Mocha 和 Chai 结合使用的代码测试框架: 继续要写代码
 - HTTPie: 当年是纯 cli，现在似乎有 desktop 版本了？反正 cli 还是很好用的
-- Hurl: 看到有人推荐，但没用过，也是cli的
+- Hurl: 看到有人推荐，但没用过，也是 cli 的
 
 ## .http 文件
 

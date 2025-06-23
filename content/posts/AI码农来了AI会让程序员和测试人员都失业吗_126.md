@@ -5,15 +5,15 @@ date: 2024-03-18T05:28:57+08:00
 lastmod: 2024-03-18T05:28:57+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "AI码农来了，AI会让程序员和测试人员都失业吗"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1601132359864-c974e79890ac?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1601132359864-c974e79890ac?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

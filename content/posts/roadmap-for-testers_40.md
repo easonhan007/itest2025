@@ -5,15 +5,15 @@ date: 2024-03-08T09:02:33+08:00
 lastmod: 2024-03-08T09:02:33+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "值得收藏"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1597461439552-91a7c673371e?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1597461439552-91a7c673371e?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,7 +21,7 @@ toc:
   auto: false
 ---
 
-今天在github上看到一份测试同学的成长之路图谱，不敢独享，在这里给大家汇报一下。
+今天在 github 上看到一份测试同学的成长之路图谱，不敢独享，在这里给大家汇报一下。
 
 ![%E5%85%88%E6%94%B6%E8%97%8F%20%E6%B5%8B%E8%AF%95%E5%90%8C%E5%AD%A6%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E9%81%93%E2%80%94from%20github%2047ddeb01df294765bd908d165758d602/roadmap.png](%E5%85%88%E6%94%B6%E8%97%8F%20%E6%B5%8B%E8%AF%95%E5%90%8C%E5%AD%A6%E7%9A%84%E6%88%90%E9%95%BF%E4%B9%8B%E9%81%93%E2%80%94from%20github%2047ddeb01df294765bd908d165758d602/roadmap.png)
 
@@ -30,7 +30,7 @@ toc:
 首先明确几个基本概念
 
 - STLT: Software Testing Life Cycle 软件测试生命周期
-- SDLC:Software Develop Life Cycle  软件开发生命周期
+- SDLC:Software Develop Life Cycle 软件开发生命周期
 - TDD: Test Driven Development 测试驱动开发
 - RPA: Robotic Process Automation 过程自动化
 
@@ -45,17 +45,17 @@ toc:
 ### 测试类型
 
 - 功能测试
-    - 单元测试
-    - 冒烟测试
-    - 集成测试
-    - 回归测试
-    - 健全性测试(sanity testing)
-    - 用户接受性测试(uat)
+  - 单元测试
+  - 冒烟测试
+  - 集成测试
+  - 回归测试
+  - 健全性测试(sanity testing)
+  - 用户接受性测试(uat)
 - 非功能性测试
-    - 负载测试
-    - 压力测试
-    - 安全测试
-    - 性能测试
+  - 负载测试
+  - 压力测试
+  - 安全测试
+  - 性能测试
 
 上面的负载，压力以及性能测试在国内其实不怎么分，可以统一看作是性能测试，只不过测试策略不同而已。
 
@@ -75,7 +75,7 @@ toc:
 
 ### 软件研发模型
 
-- V模型
+- V 模型
 - 敏捷模型：迭代式，较为常用
 - 瀑布模型
 
@@ -122,7 +122,7 @@ toc:
 - 自动化不只是记录手动编写的测试用例用代码以一种易读和重用的方式翻译出来。
 - 确保您的测试代码实际上正在测试某些东西。
 - 您的测试代码不需要进行测试。
-- http状态中，200〜OK并不总是可以的； 在测试过程中，不要仅依靠服务器状态，未经授权的API调用会获得200的状态，这会威胁到您的软件安全。
+- http 状态中，200〜OK 并不总是可以的； 在测试过程中，不要仅依靠服务器状态，未经授权的 API 调用会获得 200 的状态，这会威胁到您的软件安全。
 
 需要大图的同学请在对话框直接回复:线路图
 

@@ -5,15 +5,15 @@ date: 2024-03-08T09:01:54+08:00
 lastmod: 2024-03-08T09:01:54+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "为了节约成本"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,7 +21,7 @@ toc:
   auto: false
 ---
 
-之前ruby on rails 的创始人dhh在twitter上宣布由于云服务的价格过于昂贵，他们决定自己买服务器自建服务以节约成本。在今年9月15号的[Our cloud exit has already yielded $1m/year in savings](https://world.hey.com/dhh/our-cloud-exit-has-already-yielded-1m-year-in-savings-db358dea)这篇博客中,dhh 宣布他们公司[37 signals](https://37signals.com/)目前云服务的月花费从18万美金降到了8万美金，也就是1年可以节约100万美金。10月27号，twitter也宣布他们的去云化项目为公司降低了60%的成本。在这之后关于去云化的讨论逐渐热门起来，目前看来一些公司确实在认真思考从云端逃离的可能性。
+之前 ruby on rails 的创始人 dhh 在 twitter 上宣布由于云服务的价格过于昂贵，他们决定自己买服务器自建服务以节约成本。在今年 9 月 15 号的[Our cloud exit has already yielded $1m/year in savings](https://world.hey.com/dhh/our-cloud-exit-has-already-yielded-1m-year-in-savings-db358dea)这篇博客中,dhh 宣布他们公司[37 signals](https://37signals.com/)目前云服务的月花费从 18 万美金降到了 8 万美金，也就是 1 年可以节约 100 万美金。10 月 27 号，twitter 也宣布他们的去云化项目为公司降低了 60%的成本。在这之后关于去云化的讨论逐渐热门起来，目前看来一些公司确实在认真思考从云端逃离的可能性。
 
 ### 为什么大家都在逃离云服务
 
@@ -32,7 +32,6 @@ toc:
 初创企业往往是云服务利润的贡献者，这几年大量的初创企业倒闭导致云服务商失去了一大块利润来源，这也在一定程度上降低了云服务厂商降价的积极性。
 
 简单来说云服务的存量用户嫌贵，增量用户变少，因此整个市场就显得萧条。
-
 
 ### 我们是否真的需要云服务
 

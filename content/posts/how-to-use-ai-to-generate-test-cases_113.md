@@ -5,15 +5,15 @@ date: 2024-03-08T09:04:24+08:00
 lastmod: 2024-03-08T09:04:24+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "用ai写用例"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/uploads/14125120591540eb48427/c1c4b1aa?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/uploads/14125120591540eb48427/c1c4b1aa?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -25,21 +25,21 @@ toc:
 
 > 将人工智能 (AI) 纳入软件测试可谓是游戏规则的改变者，能够显著提升效率和有效性。本文利用 OpenAI 的文本生成模型——尤其是 GPT-3.5-turbo 和 GPT-4-turbo-preview——在 Google Colab 中构建了一个文本生成模型，重点关注测试自动化用例。
 
-看了一下，里面列举了3个测试用例。
+看了一下，里面列举了 3 个测试用例。
 
 **The system shall allow users to securely login with a username and password.**
 
 这是用户登录的用例。
 
-**Ensure that the shopping cart allows users to add items, remove items, and proceed to checkout.** 
+**Ensure that the shopping cart allows users to add items, remove items, and proceed to checkout.**
 
 这是购物车的用例。
 
 **The weather API should return a JSON response with fields for temperature, humidity, and precipitation forecast for the next 5 days.**
 
-这是用生成基于json返回值的天气api的用例。
+这是用生成基于 json 返回值的天气 api 的用例。
 
-下面是ai生成的购物车用例，看起来还是比较完备的。
+下面是 ai 生成的购物车用例，看起来还是比较完备的。
 
 ```
 Regression Test Scenarios for Shopping Cart Feature:
@@ -84,8 +84,8 @@ print(regression_tests)
 
 ### 总结
 
-总的来看这篇文章的没什么太多新意，客观上讲目前ai直接生成的用例是不能直接使用的，需要进行一定的加工和优化，不过另一方面我们也必须注意到
+总的来看这篇文章的没什么太多新意，客观上讲目前 ai 直接生成的用例是不能直接使用的，需要进行一定的加工和优化，不过另一方面我们也必须注意到
 
-- AI确实可以辅助我们进行测试用例的编写，有一定的提效效果
-- AI的使用门槛确实很低，只需要几行代码就可以实现之前完全无法想象的功能
-- AI生成的用例可能在教学演示中会有不错的应用，毕竟ai在短时间内创造材料的能力是人类所无法达到的
+- AI 确实可以辅助我们进行测试用例的编写，有一定的提效效果
+- AI 的使用门槛确实很低，只需要几行代码就可以实现之前完全无法想象的功能
+- AI 生成的用例可能在教学演示中会有不错的应用，毕竟 ai 在短时间内创造材料的能力是人类所无法达到的

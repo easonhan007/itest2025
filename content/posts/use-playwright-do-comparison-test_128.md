@@ -5,15 +5,15 @@ date: 2024-03-29T00:58:09+08:00
 lastmod: 2024-03-29T00:58:09+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "每个项目都能用上吧:使用Playwright进行图片比较测试"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

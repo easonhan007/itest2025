@@ -5,15 +5,15 @@ date: 2024-03-08T09:03:57+08:00
 lastmod: 2024-03-08T09:03:57+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "软件开发是一个复杂的过程"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -22,7 +22,6 @@ toc:
 ---
 
 原文地址: https://medium.com/@peterdtitan/designing-for-failure-in-software-development-and-testing-9f3f2d0bbd7b
-
 
 软件开发是一个复杂的过程，涉及到许多不同的技术、工具、方法和人员。在这个过程中，失败是不可避免的，甚至是必要的，因为它可以帮助我们发现错误、改进质量和提高效率。然而，并不是所有的失败都是有益的，有些失败可能会导致严重的后果，如数据丢失、系统崩溃、客户不满或法律责任。因此，我们需要在软件开发和测试中为失败而设计，即预见可能发生的失败情况，并采取相应的措施来防止、检测、恢复和学习。
 

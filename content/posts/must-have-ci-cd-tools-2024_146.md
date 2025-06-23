@@ -5,15 +5,15 @@ date: 2024-08-12T23:26:43+08:00
 lastmod: 2024-08-12T23:26:43+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "CI/CD工具开箱即用系列"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,7 +21,7 @@ toc:
   auto: false
 ---
 
-现在很多测试岗位需要测试同学有CI/CD流水线的搭建经验，这里给大家推荐一下常用的7大CI/CD工具，覆盖了代码管理，ci/cd集成，静态代码扫描，容器安全扫描，测试用例管理，性能测试等方向，值得收藏。
+现在很多测试岗位需要测试同学有 CI/CD 流水线的搭建经验，这里给大家推荐一下常用的 7 大 CI/CD 工具，覆盖了代码管理，ci/cd 集成，静态代码扫描，容器安全扫描，测试用例管理，性能测试等方向，值得收藏。
 
 ## [SonarQube](https://github.com/SonarSource/sonarqube): 代码质量的守护者
 
@@ -32,6 +32,7 @@ SonarQube 是一款卓越的代码质量和静态分析工具。
 我采访过的许多专家都表示,我会喜欢上 SonarQube,因为它能帮助改进代码并推广良好的编码习惯。
 
 SonarQube 的优点:
+
 - 静态代码分析
 - 检测 bug 和漏洞
 - 追踪代码质量隐患
@@ -40,11 +41,13 @@ SonarQube 的优点:
 目前在 GitHub 上拥有 8.8k 星标。
 
 ## [GitLab](https://about.gitlab.com/): 一体化 DevOps 平台
+
 GitLab 不仅仅是版本控制工具。
 
 我交流过的专家认为,它是一个完整的 DevOps 平台,包含 CI/CD 流水线,为众多团队提供一站式解决方案。此外,GitLab 的集成方式简化了工作流程,增强了开发和运维团队之间的协作。
 
 GitLab 的优点:
+
 - 集成版本控制
 - 内置 CI/CD 流水线
 - 协作开发环境
@@ -53,9 +56,11 @@ GitLab 的优点:
 目前在 GitHub 上拥有 5.1k 星标。
 
 ## [Gitleaks](https://github.com/gitleaks/gitleaks): 保护密码信息
+
 在 DevOps 中,安全至关重要,Gitleaks 可以扫描和检测代码中的硬编码密码。这个工具有助于防止 API 密钥和密码等敏感信息意外泄露,提高整体安全水平。
 
 Gitleaks 的优点:
+
 - 扫描硬编码密码
 - 防止敏感信息泄露
 - 与 Git 仓库无缝集成
@@ -64,9 +69,11 @@ Gitleaks 的优点:
 目前在 GitHub 上拥有 19.9k 星标。
 
 ## [Cloc](https://github.com/AlDanial/cloc): 跟踪您的代码库
+
 虽然概念简单,但 Cloc(代码行数统计)对于了解项目的规模和复杂性非常有价值。它提供的结果有助于项目规划、资源分配和复杂度管理。
 
 Cloc 的优点:
+
 - 统计代码行数
 - 提供项目复杂性洞察
 - 辅助资源分配
@@ -75,9 +82,11 @@ Cloc 的优点:
 目前在 GitHub 上拥有 19k 星标。
 
 ## [Trivy](https://github.com/aquasecurity/trivy): 确保容器安全
+
 随着容器化的普及,Trivy 成为容器和应用程序漏洞扫描的重要工具。它能识别容器镜像和应用程序中的安全问题,确保您的部署从根本上保证安全。
 
 Trivy 的优点:
+
 - 扫描容器镜像中的漏洞
 - 识别应用程序中的安全问题
 - 支持各种操作系统包和特定语言的依赖项
@@ -86,9 +95,11 @@ Trivy 的优点:
 目前在 GitHub 上拥有 22.4k 星标。
 
 ## [DefectDojo](https://github.com/DefectDojo/django-DefectDojo): 集中安全洞察
+
 DefectDojo 整合了各种安全扫描的结果,提供应用程序安全状态的全局视图。对于希望简化安全流程并全面了解安全状况的团队来说,这个工具不可或缺。
 
 DefectDojo 的优点:
+
 - 整合安全扫描结果
 - 提供应用程序安全的整体视图
 - 简化漏洞管理
@@ -97,6 +108,7 @@ DefectDojo 的优点:
 目前在 GitHub 上拥有 3.5k 星标。
 
 ## [K6](https://k6.io/): 确保高负载下的性能
+
 性能测试在 CI/CD 流水线中至关重要,K6 在这一领域表现出色。它让开发人员能轻松创建和运行性能测试,确保应用程序能够应对预期负载甚至更高负载。
 
 在一次自动化分享大会上,Nicole van der Hoeven 将 k6 描述为主要用于负载测试的开源工具。它用 Go 语言编写,因此比 Java 等传统语言具有更多性能优势。
@@ -104,6 +116,7 @@ DefectDojo 的优点:
 它是开源的,对开发人员和测试人员都很友好,而且脚本语言是 JavaScript,所以比学习 Go 更容易上手。最重要的是,K6 是一个多功能工具,可用于编写基于协议的负载测试脚本和基于浏览器的测试脚本。
 
 k6 的优点:
+
 - 创建和运行性能测试
 - 模拟各种负载场景
 - 提供详细的性能指标

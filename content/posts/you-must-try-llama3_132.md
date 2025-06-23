@@ -5,15 +5,15 @@ date: 2024-05-17T02:09:53+08:00
 lastmod: 2024-05-17T02:09:53+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "本地大模型全村的希望"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1581093804475-577d72e38aa0?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1581093804475-577d72e38aa0?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

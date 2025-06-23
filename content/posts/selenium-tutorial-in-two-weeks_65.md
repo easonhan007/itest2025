@@ -5,15 +5,15 @@ date: 2022-03-03T09:03:10+08:00
 lastmod: 2022-03-03T09:03:10+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "体验不错"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/1/macbook-air-iphone-moleskin.jpg?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/1/macbook-air-iphone-moleskin.jpg?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,21 +21,21 @@ toc:
   auto: false
 ---
 
-2021年其实立过flag，但最终事情太多，没有完成既定的目标。2022年初的时候，想到很久都没有做过教程和视频了，于是兴冲冲的录了一些selenium的全套教程，目录如下：
+2021 年其实立过 flag，但最终事情太多，没有完成既定的目标。2022 年初的时候，想到很久都没有做过教程和视频了，于是兴冲冲的录了一些 selenium 的全套教程，目录如下：
 
 - 环境搭建
 - 跑个脚本先
-- 第1个自动化用例
+- 第 1 个自动化用例
 - 前进和后退
 - 搞定被测项目
-- 使用id定位
-- 使用name定位
-- 使用xpath定位：定位王者xpath
-- 使用tag name定位
-- 使用class name定位
-- 使用css选择器定位
+- 使用 id 定位
+- 使用 name 定位
+- 使用 xpath 定位：定位王者 xpath
+- 使用 tag name 定位
+- 使用 class name 定位
+- 使用 css 选择器定位
 - 往文本框里输入内容
-- 执行js脚本
+- 执行 js 脚本
 - 滑动到页面的最底部
 - 各种表单元素的操作
 - 显示等待
@@ -46,7 +46,7 @@ toc:
 
 因为录制的时间比较短，所以影片的编辑和准备其实是不够充分的，教程应该能看，不过节奏感不好，毕竟年纪大了，有时候会显得啰嗦了一些。
 
-另外selenium的一些新特性其实并没有涉及，后面有时间可以重点补充一节。
+另外 selenium 的一些新特性其实并没有涉及，后面有时间可以重点补充一节。
 
 ### 亮点
 
@@ -58,7 +58,7 @@ toc:
 
 ### 发布节奏
 
-目前b站和微信公众号都在同步更新，每周更新4-5集，目前录了18集，应该1个月就能更新完吧。
+目前 b 站和微信公众号都在同步更新，每周更新 4-5 集，目前录了 18 集，应该 1 个月就能更新完吧。
 
 ### 后续计划
 

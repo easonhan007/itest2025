@@ -5,15 +5,15 @@ date: 2024-03-29T00:57:14+08:00
 lastmod: 2024-03-29T00:57:14+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "我克隆了自己的声音：人人都能训练模型的时代到了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1476365518243-f738bf58443d?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1476365518243-f738bf58443d?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

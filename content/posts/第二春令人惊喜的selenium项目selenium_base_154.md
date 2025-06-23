@@ -5,15 +5,15 @@ date: 2025-02-14T03:22:02+08:00
 lastmod: 2025-02-14T03:22:02+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "第二春？令人惊喜的selenium项目selenium base"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

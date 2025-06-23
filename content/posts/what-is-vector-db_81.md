@@ -5,15 +5,15 @@ date: 2024-03-08T09:03:35+08:00
 lastmod: 2024-03-08T09:03:35+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "言简意赅"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1452457750107-cd084dce177d?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1452457750107-cd084dce177d?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -25,7 +25,7 @@ toc:
 
 ### 什么是向量？
 
-向量是一组数字的数组，表示点在空间中沿多个维度的位置。例如，向量{12, 13, 19, 8, 9}表示一个点在5个维度上的位置。向量可以几何地表示数据，使得数据点之间可以进行数学比较。
+向量是一组数字的数组，表示点在空间中沿多个维度的位置。例如，向量{12, 13, 19, 8, 9}表示一个点在 5 个维度上的位置。向量可以几何地表示数据，使得数据点之间可以进行数学比较。
 
 ### 向量与嵌入有什么关系？
 

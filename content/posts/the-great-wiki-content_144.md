@@ -5,15 +5,15 @@ date: 2024-08-01T23:36:13+08:00
 lastmod: 2024-08-01T23:36:13+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "一段时间过去了，前几天我偶然看了一下百度统计里的结果，发现这些 wiki 内容竟然已经有自然流量了，尽管翻译的效果不是很好，但有访问就是好事，可以重点去优先那些大家都在搜索的页面了。"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1722343766561-0d7a6f2f7e47?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1722343766561-0d7a6f2f7e47?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

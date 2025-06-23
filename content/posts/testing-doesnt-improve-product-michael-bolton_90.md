@@ -5,15 +5,15 @@ date: 2024-03-08T09:03:50+08:00
 lastmod: 2024-03-08T09:03:50+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "确实如此"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1639815188546-c43c240ff4df?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1639815188546-c43c240ff4df?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -67,6 +67,6 @@ toc:
 
 因为全文大部分是机翻，所以行文肯定有不流畅的地方，另外加上作者本身的笔法比较曲折，有一些点机器翻译可能难以驾驭，因此全文可能看起来观点比较分散，没有强一致性，不过大家可以简单的意会，忽略那些遣词造句里的机器感。
 
-总而言之作者的观点其实并不离经叛道，而且还是有一定的道理的，比如癌症筛查并不能治疗癌症，不过如果你尽可能早的可以通过筛查确定自身的风险，提前治疗和预防，那么癌症很有可能将不会发生。测试也是如此，测的再多开发和产品不去修改，那么产品本身的质量也不会得到改进，但是如果我们频繁的提前的进行测试，那么我们就可以尽早的暴露问题，我们的开发和产品也就会有足够的时间去进行修复工作。这也是为什么我们总强调bug生命周期的原因，测试并不只是简单的提bug，而是要尽早提bug，并保证bug得到及时修复并得到验证。
+总而言之作者的观点其实并不离经叛道，而且还是有一定的道理的，比如癌症筛查并不能治疗癌症，不过如果你尽可能早的可以通过筛查确定自身的风险，提前治疗和预防，那么癌症很有可能将不会发生。测试也是如此，测的再多开发和产品不去修改，那么产品本身的质量也不会得到改进，但是如果我们频繁的提前的进行测试，那么我们就可以尽早的暴露问题，我们的开发和产品也就会有足够的时间去进行修复工作。这也是为什么我们总强调 bug 生命周期的原因，测试并不只是简单的提 bug，而是要尽早提 bug，并保证 bug 得到及时修复并得到验证。
 
 原文地址：[Testing Doesn't Improve the Product (linkedin.com)](https://www.linkedin.com/pulse/testing-doesnt-improve-product-michael-bolton?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_96)

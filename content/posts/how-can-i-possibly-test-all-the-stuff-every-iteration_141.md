@@ -5,15 +5,15 @@ date: 2024-07-05T02:38:51+08:00
 lastmod: 2024-07-05T02:38:51+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "处理这个问题的最好方法是主动避免它。总的来说，作为测试人员，尽量尽快测试变更。不要等到迭代结束。"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

@@ -5,15 +5,15 @@ date: 2024-09-13T01:22:18+08:00
 lastmod: 2024-09-13T01:22:18+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "我的答案是不需要，但又需要"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 

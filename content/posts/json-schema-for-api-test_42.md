@@ -5,15 +5,15 @@ date: 2024-03-08T09:02:36+08:00
 lastmod: 2024-03-08T09:02:36+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "有规范就会容易不少"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1614793351079-11dd79b922ba?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1614793351079-11dd79b922ba?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,17 +21,17 @@ toc:
   auto: false
 ---
 
-当今接口测试越来越重要，一般情况下我们总是会对接口的返回的json字符串进行验证，看返回是否跟我们的预期相符。不过很多情况下我们会遇到下面的问题
+当今接口测试越来越重要，一般情况下我们总是会对接口的返回的 json 字符串进行验证，看返回是否跟我们的预期相符。不过很多情况下我们会遇到下面的问题
 
-- 响应结果在测试中不停的发生变动，比如昨天还是3个字段，今天可能返回值里只有2个字段了，测试这边没有比较好的方式感受到后端的变化
-- 我们需要对json的返回值进行一些校验，需要写很多的断言，大部分时候这些断言都是相似的，或者是重复的，比如说校验某个字段的长度必须小于10之类的
+- 响应结果在测试中不停的发生变动，比如昨天还是 3 个字段，今天可能返回值里只有 2 个字段了，测试这边没有比较好的方式感受到后端的变化
+- 我们需要对 json 的返回值进行一些校验，需要写很多的断言，大部分时候这些断言都是相似的，或者是重复的，比如说校验某个字段的长度必须小于 10 之类的
 
 那如何解决呢？
 
 - 与前后端沟通好返回值的字段，类型以及校验规则，最好有前后端+测试端统一一份合约，大家都按照合约来进行数据的处理
 - 测试的时候通过合约里定义好的校验规则进行数据校验
 
-这时候json schema就派上用场了。
+这时候 json schema 就派上用场了。
 
 ### json schema
 
@@ -62,114 +62,95 @@ JSON Schema 是一种 JSON 媒体类型，用于定义 JSON 数据的结构。 J
 
 上面的定义其实是有一些疑问的，比如
 
-- id是什么意思
-- employeeName的最大长度是多少
-- employeeAge的最小值是什么
-- jobTitle是必填吗
-- hobby可以填几个
+- id 是什么意思
+- employeeName 的最大长度是多少
+- employeeAge 的最小值是什么
+- jobTitle 是必填吗
+- hobby 可以填几个
 
-我们可以通过生成JSON schema来回答上面的问题
+我们可以通过生成 JSON schema 来回答上面的问题
 
 ```json
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
-    "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
-    "default": {},
-    "examples": [
-        {
-            "employeeId": 1,
-            "employeeName": "Fulan",
-            "employeeAge": 23,
-            "jobTitle": "SDET",
-            "hobby": [
-                "watch movie",
-                "play football"
-            ]
-        }
-    ],
-    "required": [
-        "employeeId",
-        "employeeName",
-        "employeeAge",
-        "jobTitle",
-        "hobby"
-    ],
-    "properties": {
-        "employeeId": {
-            "$id": "#/properties/employeeId",
-            "type": "integer",
-            "title": "The employeeId schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                1
-            ]
-        },
-        "employeeName": {
-            "$id": "#/properties/employeeName",
-            "type": "string",
-            "title": "The employeeName schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                "Fulan"
-            ]
-        },
-        "employeeAge": {
-            "$id": "#/properties/employeeAge",
-            "type": "integer",
-            "title": "The employeeAge schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                23
-            ]
-        },
-        "jobTitle": {
-            "$id": "#/properties/jobTitle",
-            "type": "string",
-            "title": "The jobTitle schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                "SDET"
-            ]
-        },
-        "hobby": {
-            "$id": "#/properties/hobby",
-            "type": "array",
-            "title": "The hobby schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": [],
-            "examples": [
-                [
-                    "watch movies",
-                    "play football"
-                ]
-            ],
-            "additionalItems": true,
-            "items": {
-                "$id": "#/properties/hobby/items",
-                "anyOf": [
-                    {
-                        "$id": "#/properties/hobby/items/anyOf/0",
-                        "type": "string",
-                        "title": "The first anyOf schema",
-                        "description": "An explanation about the purpose of this instance.",
-                        "default": "",
-                        "examples": [
-                            "watch movies",
-                            "play football"
-                        ]
-                    }
-                ]
-            }
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "employeeId": 1,
+      "employeeName": "Fulan",
+      "employeeAge": 23,
+      "jobTitle": "SDET",
+      "hobby": ["watch movie", "play football"]
+    }
+  ],
+  "required": [
+    "employeeId",
+    "employeeName",
+    "employeeAge",
+    "jobTitle",
+    "hobby"
+  ],
+  "properties": {
+    "employeeId": {
+      "$id": "#/properties/employeeId",
+      "type": "integer",
+      "title": "The employeeId schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [1]
     },
-    "additionalProperties": true
+    "employeeName": {
+      "$id": "#/properties/employeeName",
+      "type": "string",
+      "title": "The employeeName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["Fulan"]
+    },
+    "employeeAge": {
+      "$id": "#/properties/employeeAge",
+      "type": "integer",
+      "title": "The employeeAge schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [23]
+    },
+    "jobTitle": {
+      "$id": "#/properties/jobTitle",
+      "type": "string",
+      "title": "The jobTitle schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["SDET"]
+    },
+    "hobby": {
+      "$id": "#/properties/hobby",
+      "type": "array",
+      "title": "The hobby schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [["watch movies", "play football"]],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/hobby/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/hobby/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["watch movies", "play football"]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
 }
 ```
 
@@ -177,133 +158,114 @@ JSON Schema 是一种 JSON 媒体类型，用于定义 JSON 数据的结构。 J
 
 - $schema 关键字表明此模式是根据标准的特定草案编写的，并且用于各种原因，主要是版本控制。
 - $id 关键字定义模式的 URI 和模式中其他 URI 引用解析的基本 URI。
-- title和description注释关键字只是描述性的。 它们不会对正在验证的数据添加约束。 使用这两个关键字来说明模式的意图。
+- title 和 description 注释关键字只是描述性的。 它们不会对正在验证的数据添加约束。 使用这两个关键字来说明模式的意图。
 - type 关键字定义了我们的 JSON 数据的第一个约束，在这种情况下，它必须是一个 JSON 对象。
 
 更具体一点
 
-properties里定义了各个字段的详情，我们可以在里面增加更多的约束
+properties 里定义了各个字段的详情，我们可以在里面增加更多的约束
 
 ```json
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
-    "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
-    "default": {},
-    "examples": [
-        {
-            "employeeId": 1,
-            "employeeName": "Fulan",
-            "employeeAge": 23,
-            "jobTitle": "SDET",
-            "hobby": [
-                "watch movie",
-                "play football"
-            ]
-        }
-    ],
-    "required": [
-        "employeeId",
-        "employeeName",
-        "employeeAge",
-        "jobTitle",
-        "hobby"
-    ],
-    "properties": {
-        "employeeId": {
-            "$id": "#/properties/employeeId",
-            "type": "integer",
-            "title": "The employeeId schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                1
-            ]
-        },
-        "employeeName": {
-            "$id": "#/properties/employeeName",
-            "type": "string",
-            "title": "The employeeName schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-                "Fulan"
-            ]
-        },
-        "employeeAge": {
-            "$id": "#/properties/employeeAge",
-            "type": "integer",
-            "title": "The employeeAge schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "exclusiveMinimum": 20,
-            "examples": [
-                23
-            ]
-        },
-        "jobTitle": {
-            "$id": "#/properties/jobTitle",
-            "type": "string",
-            "title": "The jobTitle schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "minLength": 4,
-            "examples": [
-                "SDET"
-            ]
-        },
-        "hobby": {
-            "$id": "#/properties/hobby",
-            "type": "array",
-            "title": "The hobby schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": [],
-            "examples": [
-                [
-                    "watch movies",
-                    "play football"
-                ]
-            ],
-            "additionalItems": true,
-            "items": {
-                "$id": "#/properties/hobby/items",
-                "anyOf": [
-                    {
-                        "$id": "#/properties/hobby/items/anyOf/0",
-                        "type": "string",
-                        "title": "The first anyOf schema",
-                        "description": "An explanation about the purpose of this instance.",
-                        "default": "",
-                        "examples": [
-                            "watch movies",
-                            "play football"
-                        ]
-                    }
-                ]
-            },
-            "uniqueItems": true
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "employeeId": 1,
+      "employeeName": "Fulan",
+      "employeeAge": 23,
+      "jobTitle": "SDET",
+      "hobby": ["watch movie", "play football"]
+    }
+  ],
+  "required": [
+    "employeeId",
+    "employeeName",
+    "employeeAge",
+    "jobTitle",
+    "hobby"
+  ],
+  "properties": {
+    "employeeId": {
+      "$id": "#/properties/employeeId",
+      "type": "integer",
+      "title": "The employeeId schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [1]
     },
-    "additionalProperties": true
+    "employeeName": {
+      "$id": "#/properties/employeeName",
+      "type": "string",
+      "title": "The employeeName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": ["Fulan"]
+    },
+    "employeeAge": {
+      "$id": "#/properties/employeeAge",
+      "type": "integer",
+      "title": "The employeeAge schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "exclusiveMinimum": 20,
+      "examples": [23]
+    },
+    "jobTitle": {
+      "$id": "#/properties/jobTitle",
+      "type": "string",
+      "title": "The jobTitle schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "minLength": 4,
+      "examples": ["SDET"]
+    },
+    "hobby": {
+      "$id": "#/properties/hobby",
+      "type": "array",
+      "title": "The hobby schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [["watch movies", "play football"]],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/hobby/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/hobby/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": ["watch movies", "play football"]
+          }
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": true
 }
 ```
 
 在上面的例子中我们规定
 
-- employeeId的默认值是0
-- employeeAge最小值是20
-- jobTitle的最小长度是4
-- hobbies必须排重，所以uniqueItems的值是true
+- employeeId 的默认值是 0
+- employeeAge 最小值是 20
+- jobTitle 的最小长度是 4
+- hobbies 必须排重，所以 uniqueItems 的值是 true
 
-json schema合约可以尽可能的详细，这样模糊的点就会相对较少，验证的结果会更加的准确。
+json schema 合约可以尽可能的详细，这样模糊的点就会相对较少，验证的结果会更加的准确。
 
-### 在测试框架中使用json schema
+### 在测试框架中使用 json schema
 
-这里以java为例，首先我们引入json schema的支持，然后定义断言工具，最后在用例中使用该断言。
+这里以 java 为例，首先我们引入 json schema 的支持，然后定义断言工具，最后在用例中使用该断言。
 
-引入json schema支持，这里用的是[https://github.com/everit-org/json-schema](https://github.com/everit-org/json-schema)，pom.xml如下
+引入 json schema 支持，这里用的是[https://github.com/everit-org/json-schema](https://github.com/everit-org/json-schema)，pom.xml 如下
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

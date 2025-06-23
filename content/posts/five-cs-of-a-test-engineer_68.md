@@ -5,15 +5,15 @@ date: 2024-03-08T09:03:14+08:00
 lastmod: 2024-03-08T09:03:14+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "因为对应的英文单词都是c开头，所以可以简称为5c特质"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/uploads/14125120591540eb48427/c1c4b1aa?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/uploads/14125120591540eb48427/c1c4b1aa?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -23,7 +23,7 @@ toc:
 
 原文地址：[https://medium.com/geekculture/five-cs-of-a-test-engineer-59f0f74049d8](https://medium.com/geekculture/five-cs-of-a-test-engineer-59f0f74049d8)
 
-简单来说，优秀的测试工程师应该具备下面的5种特质，因为对应的英文单词都是c开头，所以可以简称为5c特质。
+简单来说，优秀的测试工程师应该具备下面的 5 种特质，因为对应的英文单词都是 c 开头，所以可以简称为 5c 特质。
 
 ### **Critical Thinking**
 

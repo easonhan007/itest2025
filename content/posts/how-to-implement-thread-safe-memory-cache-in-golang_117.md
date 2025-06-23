@@ -5,15 +5,15 @@ date: 2024-03-08T09:04:31+08:00
 lastmod: 2024-03-08T09:04:31+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "一个用go实现的线程安全的内存缓存，实现代码非常简洁高效，不卖弄不烧脑"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1542903660-eedba2cda473?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1542903660-eedba2cda473?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -21,11 +21,11 @@ toc:
   auto: false
 ---
 
-这两天正好看到一个用go实现的线程安全的内存缓存，实现代码非常简洁高效，不卖弄不烧脑，非常值得初学者拿来学习。
+这两天正好看到一个用 go 实现的线程安全的内存缓存，实现代码非常简洁高效，不卖弄不烧脑，非常值得初学者拿来学习。
 
 ### 项目地址
 
-项目地址在[https://github.com/muesli/cache2go](https://github.com/muesli/cache2go)，目前已经有1.8k的star。
+项目地址在[https://github.com/muesli/cache2go](https://github.com/muesli/cache2go)，目前已经有 1.8k 的 star。
 
 ### 如何使用
 
@@ -46,7 +46,7 @@ type myStruct struct {
 
 func main() {
 	// Accessing a new cache table for the first time will create it.
-	cache := 
+	cache :=
 
 	// We will put a new item in the cache. It will expire after
 	// not being accessed via Value(key) for more than 5 seconds.
@@ -84,17 +84,17 @@ func main() {
 }
 ```
 
-简单看一下核心api
+简单看一下核心 api
 
 - 创建缓存对象: `cache2go.Cache("myCache")`
-- 设置一个key:value对：`cache.Add("someKey", 5*time.Second, &val)` 设置的时候需要指定缓存的过期时间
-- 获取key对应的value值: `res, err = cache.Value("someKey")`
+- 设置一个 key:value 对：`cache.Add("someKey", 5*time.Second, &val)` 设置的时候需要指定缓存的过期时间
+- 获取 key 对应的 value 值: `res, err = cache.Value("someKey")`
 
 这里就简单分析一下对应接口的实现原理。
 
-### key value存储
+### key value 存储
 
-这里使用的是CacheItem这个结构体来实现的key value存储。相应的数据结构是
+这里使用的是 CacheItem 这个结构体来实现的 key value 存储。相应的数据结构是
 
 ```go
 // CacheItem is an individual cache item
@@ -124,13 +124,13 @@ type CacheItem struct {
 值得注意的点有
 
 - 读写锁: `sync.RWMutex` 多线程访问的时候用来进行资源的排他锁定
-- 键的实现: `key interface{}` 所以key可以是任意类型
-- 值的实现: `data interface{}` 跟key类似，value可以是任意类型
-- 存活时间: `lifeSpan time.Duration` 大于这个时间间隔没有被访问的话，的话key就会过期被清理
+- 键的实现: `key interface{}` 所以 key 可以是任意类型
+- 值的实现: `data interface{}` 跟 key 类似，value 可以是任意类型
+- 存活时间: `lifeSpan time.Duration` 大于这个时间间隔没有被访问的话，的话 key 就会过期被清理
 - 上次被访问的时间: `accessedOn time.Time`
-- key被访问的次数: `accessCount`
+- key 被访问的次数: `accessCount`
 
-再看一下CacheItem初始化的代码
+再看一下 CacheItem 初始化的代码
 
 ```go
 // NewCacheItem returns a newly created CacheItem.
@@ -152,11 +152,11 @@ func NewCacheItem(key interface{}, lifeSpan time.Duration, data interface{}) *Ca
 }
 ```
 
-可以看出来创建时间和上次访问时间都被设置成了当前时间，访问次数是0.
+可以看出来创建时间和上次访问时间都被设置成了当前时间，访问次数是 0.
 
-### 缓存对象的实现CacheTable
+### 缓存对象的实现 CacheTable
 
-CacheTable对象包含了n个CacheItem，看一下具体的数据结构
+CacheTable 对象包含了 n 个 CacheItem，看一下具体的数据结构
 
 ```go
 type CacheTable struct {
@@ -186,11 +186,11 @@ type CacheTable struct {
 
 这里需要关注的地方是
 
-- `items map[interface{}]*CacheItem` : 每个item其实都是这个map里的一项，其实map的key就是item的key
-- `cleanupTimer *time.Timer`  : 用来做缓存过期的定时器
-- `cleanupInterval time.Duration` ： 扫描所有的items进行缓存过期清理的时间间隔
+- `items map[interface{}]*CacheItem` : 每个 item 其实都是这个 map 里的一项，其实 map 的 key 就是 item 的 key
+- `cleanupTimer *time.Timer` : 用来做缓存过期的定时器
+- `cleanupInterval time.Duration` ： 扫描所有的 items 进行缓存过期清理的时间间隔
 
-### 添加一个key value
+### 添加一个 key value
 
 ```go
 // Add adds a key/value pair to the cache.
@@ -235,16 +235,16 @@ func (table *CacheTable) addInternal(item *CacheItem) {
 
 梳理一下流程
 
-- 创建cache item
+- 创建 cache item
 - 加读写锁
 - 调用`addInternal` 方法
-- 在items map里添加一项，key就是item的key，value就是item
-- 获取整个CacheTable的清理缓存间隔时间
+- 在 items map 里添加一项，key 就是 item 的 key，value 就是 item
+- 获取整个 CacheTable 的清理缓存间隔时间
 - 解锁，到这一步基本上就完成了数据的持久化
-- 运行添加item时的回调函数，如果有的话
-- 如果item设置了过期时间，并且table的过期扫描间隔是0（首次添加）或者item的过期间隔小于table的过期间隔时间的话，调用`expirationCheck` 函数，进行过期扫描
+- 运行添加 item 时的回调函数，如果有的话
+- 如果 item 设置了过期时间，并且 table 的过期扫描间隔是 0（首次添加）或者 item 的过期间隔小于 table 的过期间隔时间的话，调用`expirationCheck` 函数，进行过期扫描
 
-### 扫描并清理过期的key
+### 扫描并清理过期的 key
 
 代码如下
 
@@ -301,17 +301,17 @@ func (table *CacheTable) expirationCheck() {
 
 - 加读写锁
 - 如果启动了扫描定时器，关闭定时器先
-- 扫描所有的key，对每一个key
-    - 加读锁
-    - 获取key的存活周期
-    - 获取key的上次访问时间
-    - 如果存活周期是0，则不处理，这是持续保活的逻辑，可以先不管
-    - 如果现在的时间距离上次访问时间已经大于了key的存活时间，则删除这个key
-    - 否则的话算出所有key里面最快要到期的那个key的时间间隔
-- 如果有拿到了最快要到期那个key的时间间隔，则运行定时器，在下这个时间间隔之后运行清理函数
+- 扫描所有的 key，对每一个 key
+  - 加读锁
+  - 获取 key 的存活周期
+  - 获取 key 的上次访问时间
+  - 如果存活周期是 0，则不处理，这是持续保活的逻辑，可以先不管
+  - 如果现在的时间距离上次访问时间已经大于了 key 的存活时间，则删除这个 key
+  - 否则的话算出所有 key 里面最快要到期的那个 key 的时间间隔
+- 如果有拿到了最快要到期那个 key 的时间间隔，则运行定时器，在下这个时间间隔之后运行清理函数
 - 解锁
 
-### 删除key的实现
+### 删除 key 的实现
 
 ```go
 // Delete an item from the cache.
@@ -359,9 +359,9 @@ func (table *CacheTable) deleteInternal(key interface{}) (*CacheItem, error) {
 
 ### 总结
 
-这应该是我见过代码最简单但是star相对比较多的开源项目了。这个项目非常适合我们进行学习，因为
+这应该是我见过代码最简单但是 star 相对比较多的开源项目了。这个项目非常适合我们进行学习，因为
 
 - 可以帮助我们理解锁的使用以及如何使用锁来保证线程安全；
-- 帮助我们理解key value内存缓存的实现
+- 帮助我们理解 key value 内存缓存的实现
 - 提供了一种使用定时器来实现定时任务的思路
 - 帮助我们理解如何注册和运行回调函数

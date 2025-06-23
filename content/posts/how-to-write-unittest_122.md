@@ -5,15 +5,15 @@ date: 2024-03-08T09:04:38+08:00
 lastmod: 2024-03-08T09:04:38+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "看看简单的单元测试用例究竟该如何设计"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/1/type-away.jpg?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/1/type-away.jpg?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -39,24 +39,24 @@ public static bool ContainsNamelessItems(this List<Item> items)
 }
 ```
 
-此方法将项目集合作为参数。它遍历项目列表，并针对每个项目`Item`检查其name属性是否为空。如果name存在且不为空，我们返回`True`，否则我们返回`False`。
+此方法将项目集合作为参数。它遍历项目列表，并针对每个项目`Item`检查其 name 属性是否为空。如果 name 存在且不为空，我们返回`True`，否则我们返回`False`。
 
 ### **使用参数方法创建测试用例**
 
 这种方式主要考虑的是入参可以传递哪些值。
 
-查看该方法的参数ContainsNamelessItems，我们有一个List<Item>名为items. 此参数可能有几个可能的值：
+查看该方法的参数 ContainsNamelessItems，我们有一个 List<Item>名为 items. 此参数可能有几个可能的值：
 
 - items 是空的
-- items至少包含 1 个Item具有Name未定义的属性
-- items不包含具有未定义Name属性的项目
+- items 至少包含 1 个 Item 具有 Name 未定义的属性
+- items 不包含具有未定义 Name 属性的项目
 - items 是 null
 
 这些可能的值中的每一个都可以作为单独的用例存在。
 
 以下是一些可能的测试用例和断言：
 
-1，当`List<Item>`为空时，我们期望返回值是`False`因为其的`List<Item>`无name属性。
+1，当`List<Item>`为空时，我们期望返回值是`False`因为其的`List<Item>`无 name 属性。
 
 ```csharp
 public void WhenItemsIsEmpty_ReturnFalse()
@@ -70,7 +70,7 @@ public void WhenItemsIsEmpty_ReturnFalse()
 }
 ```
 
-2，当`List<Item>`包含至少 1 项没有name属性的`Item`时，我们期望返回值是`True`
+2，当`List<Item>`包含至少 1 项没有 name 属性的`Item`时，我们期望返回值是`True`
 
 ```csharp
 public void WhenItemsContainsANamelessItem_ReturnTrue()
@@ -88,7 +88,7 @@ public void WhenItemsContainsANamelessItem_ReturnTrue()
 }
 ```
 
-3，当`List<Item>`不包含任何没有name属性的项目时，我们期望返回值是`False`，因为所有项目都有name。
+3，当`List<Item>`不包含任何没有 name 属性的项目时，我们期望返回值是`False`，因为所有项目都有 name。
 
 ```csharp
 public void WhenItemsDoesNotContainANamelessItem_ReturnFalse()
@@ -116,7 +116,7 @@ public void WhenItemsIsNull_ThrowArgumentException()
   Action act = () => items.ContainsNamelessItems();
 
   act.Should()
-    .Throw<ArgumentNullException>("because the collection is null");  
+    .Throw<ArgumentNullException>("because the collection is null");
 }
 ```
 
@@ -124,9 +124,9 @@ public void WhenItemsIsNull_ThrowArgumentException()
 
 路径方式需要遍历被测方法并找到所有不同的执行路径。
 
-我们上面定义的方法只有一条执行路径，因为除了直接到达方法的末尾之外，没有任何条件驱动路径。要改变路径，我们就需要引入某种条件，可以通过if...else、 switch以及try/catch语句。在这些条件块中，方法可能会在达到某个条件的情况下直接退出，而不是运行到方法的最后一行。
+我们上面定义的方法只有一条执行路径，因为除了直接到达方法的末尾之外，没有任何条件驱动路径。要改变路径，我们就需要引入某种条件，可以通过 if...else、 switch 以及 try/catch 语句。在这些条件块中，方法可能会在达到某个条件的情况下直接退出，而不是运行到方法的最后一行。
 
-下面我们就引入条件。假设我们不希望方法在入参为空时候抛出ArgumentNullException异常，而是想抛出一个我们自定义的ArgumentException异常。那么我们必须向检查项目列表是否为空的方法添加一个条件。
+下面我们就引入条件。假设我们不希望方法在入参为空时候抛出 ArgumentNullException 异常，而是想抛出一个我们自定义的 ArgumentException 异常。那么我们必须向检查项目列表是否为空的方法添加一个条件。
 
 流程图如下：
 
@@ -154,7 +154,7 @@ public void WhenItemCollectionIsNull_ThrowArgumentException()
   Action act = () => items.ContainsNamelessItems();
 
   act.Should().Throw<ArgumentException>()
-    .WithMessage("The collection of items should not be null.");  
+    .WithMessage("The collection of items should not be null.");
 }
 ```
 

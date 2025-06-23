@@ -5,15 +5,15 @@ date: 2024-03-08T09:04:17+08:00
 lastmod: 2024-03-08T09:04:17+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "来自www.freecodecamp.org"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1657705887448-465e4167a5c4?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1657705887448-465e4167a5c4?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -34,7 +34,7 @@ def proofread(text):
     correction = proofread.proofread(text)
     print("Original: {}".format(text))
     print("Correction: {}".format(correction))
-    
+
 proofread("Your Text")
 ```
 
@@ -50,15 +50,14 @@ songs = os.listdir(music_dir)
 song = random.randint(0,len(songs))
 
 # Prints The Song Name
-print(songs[song])  
+print(songs[song])
 
-os.startfile(os.path.join(music_dir, songs[0])) 
+os.startfile(os.path.join(music_dir, songs[0]))
 ```
 
 思路很好，不过似乎也用不上。
 
-
-### pdf转csv
+### pdf 转 csv
 
 ```python
 
@@ -71,7 +70,7 @@ df.to_csv('output.csv')
 
 ```
 
-需要```pip install tabula```，在做数据处理的时候就很有用了，因为有些站点的收据下载的格式默认就是pdf的。
+需要`pip install tabula`，在做数据处理的时候就很有用了，因为有些站点的收据下载的格式默认就是 pdf 的。
 
 ### 自动压缩照片
 
@@ -85,9 +84,9 @@ img = Image.open(fl[0])
 img.save("output.jpg", "JPEG", optimize = True, quality = 10)
 ```
 
-需要安装PIL(Python Imaging Library) ，在归档的时候应该有些用处。
+需要安装 PIL(Python Imaging Library) ，在归档的时候应该有些用处。
 
-### 自动下载YouTube视频
+### 自动下载 YouTube 视频
 
 ```python
 
@@ -99,7 +98,7 @@ video_download.streams.first().download()
 print('Video Downloaded', link)
 ```
 
-需要安装pytube，国内的话用处不大，推荐一个替代的命令行工具**you-get**，可以下载b站视频，有兴趣的同学可以研究一下。
+需要安装 pytube，国内的话用处不大，推荐一个替代的命令行工具**you-get**，可以下载 b 站视频，有兴趣的同学可以研究一下。
 
 ### 自动文本转语音
 
@@ -113,15 +112,15 @@ def main():
    mixer.init()
    mixer.music.load('output.mp3')
    mixer.music.play()
-   
+
 if __name__ == "__main__":
    main()
 
 ```
-这里用的是Google Text to Speech API，国内用不上。
 
+这里用的是 Google Text to Speech API，国内用不上。
 
-### 图片转pdf
+### 图片转 pdf
 
 ```python
 from fpdf import FPDF
@@ -145,12 +144,13 @@ def plagiarism_checker(f1,f2):
         f1_data=file1.read()
         f2_data=file2.read()
         res=SequenceMatcher(None, f1_data, f2_data).ratio()
-        
+
 print(f"These files are {res*100} % similar")
 f1=input("Enter file_1 path: ")
 f2=input("Enter file_2 path: ")
 plagiarism_checker(f1, f2)
 ```
+
 其实就是比较两个文件的相似性，不知道对中文的支持如何。
 
 ### 生成短链接
@@ -169,7 +169,7 @@ except ImportError:
 import sys
 
 def make_tiny(url):
-	request_url = ('http://tinyurl.com/app-index.php?' + 
+	request_url = ('http://tinyurl.com/app-index.php?' +
 	urlencode({'url':url}))
 	with contextlib.closing(urlopen(request_url)) as response:
 		return response.read().decode('utf-8')
@@ -180,7 +180,7 @@ def main():
 
 if __name__ == '__main__':
 	main()
-    
+
 
 '''
 
@@ -190,9 +190,8 @@ https://tinyurl.com/bif4t9
 
 '''
 ```
-    
-调用第三方服务生成短链接，其实也可以自己写个短链接的生成服务，用flask+redis就可以了。
 
+调用第三方服务生成短链接，其实也可以自己写个短链接的生成服务，用 flask+redis 就可以了。
 
 ### 网络测速
 
@@ -223,7 +222,6 @@ print(f"Ping Speed: {ping}")
 
 这个很有用的，可以保存一下。
 
-
 ### 总结
 
-这些自动化脚本其实都很不错，短小精悍，属于入门级，尽管跟离提升工作效率的目的还有点距离，不过却可以很好的向初学者进行python自动化概念的展示，很不错的帖子。
+这些自动化脚本其实都很不错，短小精悍，属于入门级，尽管跟离提升工作效率的目的还有点距离，不过却可以很好的向初学者进行 python 自动化概念的展示，很不错的帖子。

@@ -5,15 +5,15 @@ date: 2024-03-09T09:04:26+08:00
 lastmod: 2024-03-09T09:04:26+08:00
 draft: false
 author: "乙醇"
-authorLink: "https://example.com/author"
+authorLink: "https://github.com/easonhan007"
 description: "这个网站应该是我见过最全面的关于测试领域的知识整理了"
 images: []
 resources:
-- name: "featured-image"
-  src: "https://images.unsplash.com/photo-1498049860654-af1a5c566876?w=300"
+  - name: "featured-image"
+    src: "https://images.unsplash.com/photo-1498049860654-af1a5c566876?w=300"
 
 tags: []
-categories: ['测试工具', '软件测试基础']
+categories: ["测试工具", "软件测试基础"]
 
 lightgallery: true
 
@@ -23,19 +23,19 @@ toc:
 
 https://ray.run/wiki
 
-这个网站应该是我见过最全面的关于测试领域的知识整理了。稍微写代码数了一下，应该有200多个主要知识点，每个下面都有很多的常见问题。知识点的解释其实没啥突出的，不过常见问题对于面试来说就非常的顺手了。
+这个网站应该是我见过最全面的关于测试领域的知识整理了。稍微写代码数了一下，应该有 200 多个主要知识点，每个下面都有很多的常见问题。知识点的解释其实没啥突出的，不过常见问题对于面试来说就非常的顺手了。
 
-稍微列举1个有意思的主题。
+稍微列举 1 个有意思的主题。
 
 > Definition of Acceptance Test Driven Development
 
-什么是ATDD?
+什么是 ATDD?
 
 说实话，这个概念我也是第一次见到。
 
 > What are the key steps involved in ATDD?
 
-ATDD的关键步骤有哪些？
+ATDD 的关键步骤有哪些？
 
 The key steps involved in ATDD are:
 
@@ -57,9 +57,10 @@ Feature: User login
     When I enter valid credentials
     Then I should be redirected to the dashboard
 ```
+
 Effective ATDD requires a strong collaboration culture, clear communication, and a commitment to quality from all team members.
 
-稍微阅读理解一下，发现所谓的ATDD的流程大概是
+稍微阅读理解一下，发现所谓的 ATDD 的流程大概是
 
 - 定义测试条件和范围
 - 写用例
@@ -70,14 +71,13 @@ Effective ATDD requires a strong collaboration culture, clear communication, and
 - 根据客户的反馈来判断用例是否覆盖了全部的需求
 - 重复上面的步骤，直到产品交付
 
-这里的用例基本上用的是特定的DSL来写的，也就是有自己的语法，一般常用的就有BDD框架支持的语法，比如上面列举的那样。
+这里的用例基本上用的是特定的 DSL 来写的，也就是有自己的语法，一般常用的就有 BDD 框架支持的语法，比如上面列举的那样。
 
-概念不新鲜，其实是bdd的一种，不过换个名字就真的不认识了。
-
+概念不新鲜，其实是 bdd 的一种，不过换个名字就真的不认识了。
 
 ### 总结
 
-- 这个wiki的内容非常全面，大部分常见的软件测试内容基本上里面都有涵盖
+- 这个 wiki 的内容非常全面，大部分常见的软件测试内容基本上里面都有涵盖
 - 里面的内容的准确性需要自己评估，毕竟世界上没有完全正确的观点
 - 适合入门以及转码的小伙伴仔细研读，主要关注跟测试流程相关的部分
 - 高手和有经验的同学可以用来查缺补漏
