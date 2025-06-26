@@ -24,8 +24,6 @@ authorLink = "https://github.com/easonhan007"
 
 我用 pydoll 实现了一个测试[任务列表](https://todomvc.com/examples/react/dist/)的测试套件，包含 5 个测试用例。
 
-![](https://github-production-user-asset-6210df.s3.amazonaws.com/1966376/459310738-09a6bfd3-26cb-4e98-bce5-6866f0f56343.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250626T095315Z&X-Amz-Expires=300&X-Amz-Signature=48215a1a9182263db82af63a813ce359d96be489f934bf8a6a87c64383c308f4&X-Amz-SignedHeaders=host)
-
 具体用例如下
 
 ```python
