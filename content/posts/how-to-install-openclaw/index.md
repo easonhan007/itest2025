@@ -7,6 +7,10 @@ author: "乙醇"
 authorLink: "https://github.com/easonhan007"
 tags: ["openclaw", "clawdbot", "moltbot"]
 
+resources:
+  - name: "featured-image"
+    src: "2026-01-31-14-45-45.png"
+
 lightgallery: false
 ---
 
@@ -39,6 +43,14 @@ Claw：就是爪子，保留龙虾爪子的血统，向起点致敬。
 这次应该不会再改名字了，终于可以给大家分享一下如何安装openclaw了，对于没有技术基础的同学来说，本地安装还是很有难度的。
 
 下面给大家演示一下如何在mac和linux上安装openclaw，这里我们的目标是让国内的同学不花一分钱把服务运行起来。
+
+## YouTube视频
+
+{{< youtube 3zggEv39Voc >}}
+
+## B站视频
+
+{{< bilibili BV17p6qBeEBy >}}
 
 ## mac 系统
 
@@ -150,6 +162,8 @@ ssh -N -L 18888:127.0.0.1:18789 用户名@目标机器的ip
 这里的token可以在安装结束后的命令行里看到，或者在linux机器上运行命令`openclaw dashboard`来查看。
 
 在浏览器的聊天窗口中测试一下，openclaw能回答就证明配置成功了。
+
+![](2026-01-31-14-47-20.png)
 
 ## 总结
 
