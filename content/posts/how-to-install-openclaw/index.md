@@ -9,7 +9,7 @@ tags: ["openclaw", "clawdbot", "moltbot"]
 
 resources:
   - name: "featured-image"
-    src: "2026-01-31-14-45-45.png"
+    src: "openclaw_b.png"
 
 lightgallery: false
 ---
