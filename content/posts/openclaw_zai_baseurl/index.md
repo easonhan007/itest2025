@@ -12,7 +12,7 @@ resources:
   - name: "featured-image"
     src: "2026-01-31-14-41-17.png"
 
-tags: []
+tags: ["openclaw", "clawdbot", "moltbot"]
 categories: ["openclaw", "AI", "自动化"]
 
 lightgallery: true

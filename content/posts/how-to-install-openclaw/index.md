@@ -6,7 +6,7 @@ draft: false
 author: "乙醇"
 authorLink: "https://github.com/easonhan007"
 tags: ["openclaw", "clawdbot", "moltbot"]
-
+categories: ["openclaw", "AI", "自动化"]
 resources:
   - name: "featured-image"
     src: "openclaw_b.png"
