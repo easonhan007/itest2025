@@ -20,3 +20,6 @@ $RECYCLE.BIN/
 .directory
 
 .hugo_build.lock
+
+# Deployment scripts with sensitive info
+deploy.sh
