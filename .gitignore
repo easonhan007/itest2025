@@ -23,3 +23,9 @@ $RECYCLE.BIN/
 
 # Deployment scripts with sensitive info
 deploy.sh
+
+# OpenCode plans
+.opencode/
+
+# Binary files
+cr
