@@ -339,10 +339,10 @@ gravatarEmail = ""
 # avatarURL = "/images/avatar.png"
 # title shown in home page (HTML format is supported)
 # 主页显示的网站标题 (支持 HTML 格式)
-title = "专注测试技术的课程订阅站点"
+title = "AI人工智能与软件测试 "
 # subtitle shown in home page (HTML format is supported)
 # 主页显示的网站副标题 (允许 HTML 格式)
-subtitle = "测试教程及测试技能分享"
+subtitle = "人工智能与软件测试的开源知识中心:免费工具、方法论、案例、趋势分享 "
 # whether to use typeit animation for subtitle
 # 是否为副标题显示打字机动画
 typeit = true
