@@ -1,8 +1,8 @@
 ---
 weight: -999
 title: "别再问 测试会不会被AI取代了 ——2026年数据告诉你：QA才是最后防线"
-date: 2026-01-30T09:02:55+08:00
-lastmod: 2026-01-30T09:02:55+08:00
+date: 2026-02-14T09:02:55+08:00
+lastmod: 2026-02-14T09:02:55+08:00
 draft: false
 author: "乙醇"
 authorLink: "https://zh.ethanhan.cc"
