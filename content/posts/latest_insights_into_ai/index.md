@@ -1,9 +1,25 @@
-+++
-date = '2026-05-21T10:06:18+08:00'
-draft = false
-title = '开发靠 AI 提效，测试成最大瓶颈，现状过于真实'
-weight= -999
-+++
+---
+weight: -999
+title: "开发靠 AI 提效，测试成最大瓶颈，现状过于真实"
+date: 2026-05-21T10:06:18+08:00
+lastmod: 2026-05-21T10:06:18+08:00
+draft: false
+author: "乙醇"
+authorLink: "https://zh.ethanhan.cc"
+description: ""
+images: []
+resources:
+  - name: "featured-image"
+    src: "cover.jpg"
+
+tags: ["AI", "QA"]
+categories: ["AI", "功能测试", "自动化测试"]
+
+lightgallery: true
+
+toc:
+  auto: true
+---
 
 最近两个月高强度的使用AI进行了一些跟测试相关工作的探索，从之前大火的openclaw到hermes，从claude code到opencode再到codex，从各种国内模型到sunnet再到gpt5.5，感觉上是一日不见如隔三秋，两个月的时间变化相当迅速。
 
