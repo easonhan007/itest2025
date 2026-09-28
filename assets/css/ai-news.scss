@@ -55,6 +55,10 @@ body.press-home-page,body.press-post-page { background:var(--press-paper); color
 #header-desktop .header-wrapper,#header-mobile .header-wrapper { box-sizing:border-box; max-width:1264px; margin:auto; padding:0 32px; }
 #header-desktop .header-title,#header-mobile .header-title { font-size:21px; font-weight:650; letter-spacing:0; }
 #header-desktop .menu-item { font-size:14px; }
+#header-desktop .menu-inner { display:flex; align-items:center; }
+#header-desktop .menu-item.search { display:inline-flex; align-items:center; height:44px; }
+#header-desktop .search .search-button { top:50%; transform:translateY(-50%); line-height:1; }
+#header-desktop .search .search-button svg { display:block; }
 #header-desktop .delimiter { display:none; }
 #header-desktop a,#header-mobile a { color:var(--press-ink); }
 #header-desktop a:hover,#header-mobile a:hover,
