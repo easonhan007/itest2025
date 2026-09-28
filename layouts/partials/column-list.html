@@ -1,0 +1,23 @@
+{{ $pages := .RegularPages.ByDate.Reverse }}
+<div class="column-page">
+  {{ partial "column-header.html" (dict "page" . "count" (len $pages) "unit" "篇内容") }}
+  {{ $pager := .Paginate $pages 20 }}
+  {{ if eq .Section "video" }}
+  <div class="column-video-grid">{{ range $pager.Pages }}
+    <article class="column-video-card">
+      <a class="column-video-preview" href="{{ .RelPermalink }}" aria-label="观看：{{ .Title }}">
+        <span class="column-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="m9 5 11 7-11 7Z"/></svg></span>
+        <span>{{ with .Params.categories }}{{ index . 0 }}{{ else }}测试实操{{ end }}</span>
+        {{ partial "video-cover.html" . }}
+      </a>
+      <div class="column-video-body"><div class="column-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time></div><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ with partial "column-summary.html" . }}<p class="column-summary">{{ . }}</p>{{ end }}<a class="column-video-link" href="{{ .RelPermalink }}">观看教程 <span aria-hidden="true">→</span></a></div>
+    </article>
+  {{ end }}</div>
+  {{ else }}
+  <div class="column-years">{{ range $pager.Pages.GroupByDate "2006" }}
+    <section class="column-year" aria-labelledby="year-{{ .Key }}"><h2 id="year-{{ .Key }}">{{ .Key }}</h2><div class="column-items">{{ range .Pages }}{{ partial "column-item.html" (dict "page" . "mixed" (eq $.Kind "term")) }}{{ end }}</div></section>
+  {{ end }}</div>
+  {{ end }}
+  {{ if not $pages }}<p class="column-empty">这里还没有内容。<a href="{{ .Site.Home.RelPermalink }}">返回首页浏览</a></p>{{ end }}
+  {{ partial "column-pagination.html" $pager }}
+</div>

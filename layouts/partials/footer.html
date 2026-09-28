@@ -1,0 +1,8 @@
+<footer class="press-footer">
+  <div class="press-footer-inner">
+    <div class="press-footer-identity">
+      <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    </div>
+    {{- with .Site.Params.footer.icp }}<span>{{ . | safeHTML }}</span>{{ end -}}
+  </div>
+</footer>

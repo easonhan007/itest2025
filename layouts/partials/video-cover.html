@@ -1,0 +1,9 @@
+{{- $cover := .Resources.GetMatch "featured-image" -}}
+{{- if not $cover -}}
+  {{- range first 1 (findRE `\{\{[<%]\s*bilibili\b[^}]*[>%]\}\}` .RawContent) -}}
+    {{- range first 1 (findRE `BV[0-9A-Za-z]{10}` .) -}}
+      {{- $cover = resources.GetMatch (printf "bilibili/%s.*" .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $cover -}}<img src="{{ .RelPermalink }}" alt="" loading="lazy" decoding="async" onerror="this.hidden=true" />{{- end -}}

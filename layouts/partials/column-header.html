@@ -1,0 +1,6 @@
+{{ $info := partial "column-info.html" .page }}
+<header class="column-heading">
+  <nav class="column-breadcrumb" aria-label="面包屑"><a href="{{ .page.Site.Home.RelPermalink }}">首页</a><span aria-hidden="true">/</span>{{ if eq .page.Kind "term" }}{{ $parent := .page.Site.GetPage .page.Data.Plural }}<a href="{{ $parent.RelPermalink }}">{{ if eq .page.Data.Plural "categories" }}分类{{ else }}标签{{ end }}</a><span aria-hidden="true">/</span>{{ end }}<span aria-current="page">{{ $info.title }}</span></nav>
+  <h1>{{ $info.title }}</h1>
+  <div class="column-intro"><p>{{ $info.description }}</p><span class="column-count">{{ .count }} {{ .unit }}</span></div>
+</header>

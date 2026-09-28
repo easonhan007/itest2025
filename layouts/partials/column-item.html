@@ -1,0 +1,7 @@
+{{ $page := .page }}
+<article class="column-item{{ if eq $page.Section "tutorials" }} column-item-tutorial{{ end }}">
+  <div class="column-item-topic">{{ if .mixed }}<span>{{ if eq $page.Section "tutorials" }}图文教程{{ else if eq $page.Section "video" }}视频{{ else }}文章{{ end }}</span>{{ end }}{{ with first 1 ($page.GetTerms "categories") }}{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}</div>
+  <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+  {{ with partial "column-summary.html" $page }}<p class="column-summary">{{ . }}</p>{{ end }}
+  <div class="column-meta"><time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006.01.02" }}</time>{{ if ne $page.Section "video" }}<span>{{ $page.ReadingTime }} 分钟阅读</span>{{ end }}</div>
+</article>

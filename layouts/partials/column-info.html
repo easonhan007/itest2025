@@ -1,0 +1,11 @@
+{{- $title := .Title -}}
+{{- $description := "按主题探索文章、教程与工程实践。" -}}
+{{- if eq .Kind "section" -}}
+  {{- if eq .Section "posts" -}}{{ $title = "文章" }}{{ $description = "关于 AI、软件测试与研发效能的观察与实践。" }}
+  {{- else if eq .Section "tutorials" -}}{{ $title = "图文教程" }}{{ $description = "从基础概念到工具实操，逐篇掌握测试技能。" }}
+  {{- else if eq .Section "video" -}}{{ $title = "视频教程" }}{{ $description = "跟随实操演示，把测试方法用到真实项目中。" }}{{- end -}}
+{{- else if eq .Kind "taxonomy" -}}
+  {{- if eq .Data.Plural "categories" -}}{{ $title = "分类" }}{{ $description = "按知识领域，找到适合你的文章与教程。" }}
+  {{- else -}}{{ $title = "标签" }}{{ $description = "从一个关键词出发，发现相关工具、方法与实践。" }}{{- end -}}
+{{- end -}}
+{{- return (dict "title" $title "description" $description) -}}

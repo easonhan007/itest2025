@@ -1,0 +1,98 @@
+{{- $params := .Scratch.Get "params" -}}
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>
+                    {{- with .Site.Params.dateformat | default "2006-01-02" | .Lastmod.Format -}}
+                        {{- dict "Date" . | T "updatedOnDate" -}}
+                        {{- if $.Site.Params.gitRepo -}}
+                            {{- with $.GitInfo -}}
+                                &nbsp;<a class="git-hash" href="{{ printf `%v/commit/%v` $.Site.Params.gitRepo .Hash }}" target="_blank" title="commit by {{ .AuthorName }}({{ .AuthorEmail }}) {{ .Hash }}: {{ .Subject }}">
+                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>{{- .AbbreviatedHash -}}
+                                </a>
+                            {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+                </span>
+            </div>
+            {{- with $params.license | string -}}
+            <div class="post-info-license">
+                <span>
+                    {{- . | safeHTML -}}
+                </span>
+            </div>
+            {{- end -}}
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                {{- if $params.linktomarkdown -}}
+                    {{- with .OutputFormats.Get "markdown" -}}
+                        <span>
+                            <a class="link-to-markdown" href="{{ .RelPermalink }}" target="_blank">
+                                {{- T "readMarkdown" -}}
+                            </a>
+                        </span>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+            <div class="post-info-share">
+                <span>
+                    {{- partial "plugin/share.html" . -}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags">
+            {{- with .Params.tags -}}
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;
+                {{- range $index, $value := . -}}
+                    {{- if gt $index 0 }},&nbsp;{{ end -}}
+                    {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
+                    <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
+                {{- end -}}
+            {{- end -}}
+        </section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">{{ T "back" }}</a></span>&nbsp;|&nbsp;<span><a href="{{ .Site.Home.RelPermalink }}">{{ T "home" }}</a></span>
+        </section>
+    </div>
+
+    <nav class="post-nav" aria-label="文章导航">
+        {{- $prevPage := false -}}
+        {{- $nextPage := false -}}
+        {{- if or (.Params.prev) (.Params.next) -}}
+            {{- with .Params.prev -}}
+                {{- $prevPage = $.Site.GetPage . -}}
+            {{- end -}}
+            {{- with .Params.next -}}
+                {{- $nextPage = $.Site.GetPage . -}}
+            {{- end -}}
+        {{- else if eq .Type "posts" -}}
+            {{- /* Match the newest-first article list, including equal-date ordering. */ -}}
+            {{- $pages := .CurrentSection.RegularPages.ByDate.Reverse -}}
+            {{- range $index, $page := $pages -}}
+                {{- if eq $page.RelPermalink $.RelPermalink -}}
+                    {{- if gt $index 0 -}}
+                        {{- $prevPage = index $pages (sub $index 1) -}}
+                    {{- end -}}
+                    {{- if lt (add $index 1) (len $pages) -}}
+                        {{- $nextPage = index $pages (add $index 1) -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+        {{- else -}}
+            {{- $prevPage = .PrevInSection -}}
+            {{- $nextPage = .NextInSection -}}
+        {{- end -}}
+        {{- with $prevPage -}}
+            <a href="{{ .RelPermalink }}" class="prev" rel="prev" title="{{ .Title }}">{{ if eq $.Type "posts" }}<span class="post-nav-label">← 上一篇</span><span class="post-nav-title">{{ .Title | emojify }}</span>{{ else }}<i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>{{ .Title | emojify }}{{ end }}</a>
+        {{- end -}}
+        {{ with $nextPage }}
+            <a href="{{ .RelPermalink }}" class="next" rel="next" title="{{ .Title }}">{{ if eq $.Type "posts" }}<span class="post-nav-label">下一篇 →</span><span class="post-nav-title">{{ .Title | emojify }}</span>{{ else }}{{ .Title | emojify }}<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i>{{ end }}</a>
+        {{- end -}}
+    </nav>
+</div>

@@ -1,0 +1,10 @@
+{{- $text := .Description -}}
+{{- if not $text -}}
+  {{- $raw := index (split .RawContent "原始封面") 0 -}}
+  {{- $raw = replaceRE "(?s)```.*?```|~~~.*?~~~" " " $raw -}}
+  {{- $raw = replaceRE `(?m)^\s*#{1,6}\s+.*$` " " $raw -}}
+  {{- $raw = replaceRE `(?s)\{\{[<%].*?[>%]\}\}` " " $raw -}}
+  {{- $raw = replaceRE `!\[[^\]]*\]\([^)]*\)` " " $raw -}}
+  {{- $text = $raw | markdownify | plainify | htmlUnescape -}}
+{{- end -}}
+{{- return (replaceRE `\s+` " " $text | strings.TrimSpace | truncate 180) -}}

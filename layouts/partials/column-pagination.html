@@ -1,0 +1,10 @@
+{{ if gt .TotalPages 1 }}
+<nav class="column-pagination" aria-label="分页">
+  {{ if .HasPrev }}<a href="{{ .Prev.URL }}" rel="prev">← 上一页</a>{{ else }}<span aria-disabled="true">← 上一页</span>{{ end }}
+  <div class="column-page-numbers">{{ $current := .PageNumber }}{{ $total := .TotalPages }}{{ $ellipsis := false }}
+  {{ range .Pagers }}{{ if or (eq .PageNumber 1) (eq .PageNumber $total) (le (math.Abs (sub .PageNumber $current)) 1) }}{{ $ellipsis = false }}
+    {{ if eq .PageNumber $current }}<span aria-current="page" aria-label="第 {{ .PageNumber }} 页">{{ .PageNumber }}</span>{{ else }}<a href="{{ .URL }}" aria-label="第 {{ .PageNumber }} 页">{{ .PageNumber }}</a>{{ end }}
+  {{ else if not $ellipsis }}<span class="column-ellipsis" aria-hidden="true">…</span>{{ $ellipsis = true }}{{ end }}{{ end }}</div>
+  {{ if .HasNext }}<a href="{{ .Next.URL }}" rel="next">下一页 →</a>{{ else }}<span aria-disabled="true">下一页 →</span>{{ end }}
+  <p class="column-page-status">第 {{ .PageNumber }} / {{ .TotalPages }} 页</p>
+</nav>{{ end }}

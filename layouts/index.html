@@ -1,0 +1,61 @@
+{{- define "content" -}}
+{{- $pages := where .Site.RegularPages "Type" "posts" -}}
+{{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- $lead := index $pages 0 -}}
+{{- $secondary := first 3 (after 1 $pages) -}}
+{{- $features := first 3 (after 4 $pages) -}}
+{{- $latest := first 6 $pages -}}
+{{- $leadImage := "" -}}
+{{- with $lead.Resources.GetMatch "featured-image" }}{{ $leadImage = .RelPermalink }}{{ end -}}
+
+<div class="press-home">
+  <section class="press-masthead" aria-labelledby="masthead-title"><div><h1 id="masthead-title">AI 时代的质量保障实践</h1><p>分享 AI 应用、软件测试与质量工程的方法、工具和实战经验。</p></div><a href="#latest">最新发布 ↓</a></section>
+
+  <section class="press-lead-grid" aria-label="本期重点">
+    <article class="press-lead-story">
+      <a class="press-lead-image" href="{{ $lead.RelPermalink }}" aria-label="阅读：{{ $lead.Title }}">{{ partial "press-cover.html" $lead }}</a>
+      <div class="press-story-meta"><span>本期头条</span><time datetime="{{ $lead.Date.Format "2006-01-02" }}">{{ $lead.Date.Format "2006.01.02" }}</time><span>{{ $lead.ReadingTime }} 分钟阅读</span></div>
+      <h2><a href="{{ $lead.RelPermalink }}">{{ $lead.Title }}</a></h2>
+      <p>{{ with $lead.Description }}{{ . }}{{ else }}{{ $lead.Summary | plainify | truncate 150 }}{{ end }}</p>
+    </article>
+    <aside class="press-briefs" aria-labelledby="briefs-title">
+      <div class="press-section-label"><h2 id="briefs-title">编辑精选</h2></div>
+      {{- range $index, $page := $secondary -}}
+      <article><div><p>{{ with index $page.Params.categories 0 }}{{ . }}{{ else }}工程观察{{ end }} · {{ $page.Date.Format "01.02" }}</p><h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3></div></article>
+      {{- end -}}
+      <a class="press-all-link" href="{{ "posts/" | relLangURL }}">浏览全部文章 <span aria-hidden="true">→</span></a>
+    </aside>
+  </section>
+
+  <nav class="press-topics" aria-label="按主题阅读">
+    <span>按主题阅读</span><a href="{{ "categories/ai/" | relLangURL }}">AI</a><a href="{{ "categories/自动化测试/" | relLangURL }}">自动化测试</a><a href="{{ "categories/功能测试/" | relLangURL }}">功能测试</a><a href="{{ "tutorials/" | relLangURL }}">图文教程</a>
+  </nav>
+
+  <section class="press-section" aria-labelledby="features-title">
+    <div class="press-section-heading"><div><h2 id="features-title">深度与实践</h2></div><a href="{{ "posts/" | relLangURL }}">更多文章 <span aria-hidden="true">→</span></a></div>
+    <div class="press-feature-grid">
+      {{- range $index, $page := $features -}}
+      {{- $image := "" -}}{{- with $page.Resources.GetMatch "featured-image" }}{{ $image = .RelPermalink }}{{ end -}}
+      <article class="press-feature">
+        <a class="press-feature-image" href="{{ $page.RelPermalink }}" aria-label="阅读：{{ $page.Title }}">{{ partial "press-cover.html" $page }}</a>
+        <div class="press-story-meta"><span>{{ with index $page.Params.categories 0 }}{{ . }}{{ else }}洞察{{ end }}</span><time>{{ $page.Date.Format "2006.01.02" }}</time></div>
+        <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+
+      </article>
+      {{- end -}}
+    </div>
+  </section>
+
+  <section class="press-latest" id="latest" aria-labelledby="latest-title">
+    <div class="press-section-heading"><div><h2 id="latest-title">最新发布</h2></div><a href="{{ "posts/" | relLangURL }}">进入文章库 <span aria-hidden="true">→</span></a></div>
+    <div class="press-latest-grid">
+      <div class="press-latest-list">
+        {{- range $latest -}}
+        <article><time datetime="{{ .Date.Format "2006-01-02" }}"><b>{{ .Date.Format "01.02" }}</b><span>{{ .Date.Format "2006" }}</span></time><div><p>{{ with index .Params.categories 0 }}{{ . }}{{ else }}工程实践{{ end }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3></div><a href="{{ .RelPermalink }}" aria-label="阅读：{{ .Title }}">↗</a></article>
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+</div>
+{{- end -}}

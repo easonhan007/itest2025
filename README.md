@@ -46,3 +46,11 @@ front matter 里设置`categories:[]`，可以设置多个
 # tags
 
 front matter 里设置`tags:[]`，可以设置多个
+
+# 视频列表封面
+
+运行 `python3 scripts/sync_bilibili_covers.py`，读取 `content/video` 中每篇文章的第一个 B 站短代码，从公开页面获取封面并缓存到 `assets/bilibili/`。需要联网，仅使用 Python 标准库。
+
+默认跳过已有封面；使用 `--force` 更新。将图片一并提交即可，正常 Hugo 构建和访客浏览不访问 B 站接口。抓取失败会报告 BV 号并返回非零状态，保留已有缓存。
+
+视频列表优先使用文章的 `featured-image` 资源，其次按 BV 号读取缓存；缺失或图片加载失败时显示占位。文章中的播放器与链接不变。

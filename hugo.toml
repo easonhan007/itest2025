@@ -119,7 +119,7 @@ title = ""
 
 [[menu.main]]
 
-weight = 6
+weight = 7
 
 identifier = "playwright"
 
@@ -135,7 +135,7 @@ title = ""
 
 [[menu.main]]
 
-weight = 5
+weight = 6
 
 identifier = "video"
 
@@ -148,6 +148,18 @@ name = "视频教程"
 url = "/video/"
 
 title = ""
+
+[[menu.main]]
+
+weight = -1
+
+identifier = "ai"
+
+name = "AI"
+
+url = "/tags/ai/"
+
+title = "AI 相关文章与教程"
 
 
 # Markup related configuration in Hugo
@@ -572,11 +584,12 @@ Telegram = true
 # Comment config
 # 评论系统设置
 [params.page.comment]
-enable = true
+# 尚未配置评论服务，避免生成空评论区和无效脚本请求。
+enable = false
 # Disqus comment config (https://disqus.com/)
 # Disqus 评论系统设置 (https://disqus.com/)
 [params.page.comment.disqus]
-enable = true
+enable = false
 # Disqus shortname to use Disqus in posts
 # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
 shortname = ""

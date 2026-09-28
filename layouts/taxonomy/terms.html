@@ -1,0 +1,13 @@
+{{ define "title" }}{{ $info := partial "column-info.html" . }}{{ $info.title }} - {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+{{ $categories := eq .Data.Plural "categories" }}
+<div class="column-page">
+  {{ partial "column-header.html" (dict "page" . "count" (len .Data.Terms) "unit" (cond $categories "个分类" "个标签")) }}
+  {{ if $categories }}<div class="column-category-grid">{{ range .Data.Terms.ByCount }}
+    <section class="column-category-card"><div class="column-category-top"><span class="column-count">{{ .Count }} 篇内容</span><h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a></h2></div>
+      <ul>{{ range first 2 .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+      <a class="column-category-link" href="{{ .Page.RelPermalink }}">查看全部 <span aria-hidden="true">→</span></a>
+    </section>
+  {{ end }}</div>{{ else }}<div class="column-tags">{{ range .Data.Terms.ByCount }}<a href="{{ .Page.RelPermalink }}"><span>{{ .Page.LinkTitle }}</span><span class="column-tag-count">{{ .Count }}</span></a>{{ end }}</div>{{ end }}
+</div>
+{{ end }}

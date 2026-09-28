@@ -1,5 +1,5 @@
 ---
-weight: -999
+weight: 1
 title: "AI Agent（如 OpenClaw）如何彻底重构测试人员的工作内容"
 date: 2026-03-05T00:02:55+08:00
 lastmod: 2026-03-05T00:02:55+08:00
