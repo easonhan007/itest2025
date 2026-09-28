@@ -1,0 +1,11 @@
+{
+  "name": "重定向学院",
+  "short_name": "重定向学院",
+  "description": "软件测试学习及教程站点",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
