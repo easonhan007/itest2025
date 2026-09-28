@@ -10,7 +10,7 @@ body.press-home-page,body.press-post-page { background:var(--press-paper); color
 .press-home a,.press-footer a { color:var(--press-ink); text-decoration:none; }
 .press-home a:hover,.press-footer a:hover { color:var(--press-green); }
 .press-home a:focus-visible,header button:focus-visible,header a:focus-visible,.press-footer a:focus-visible { outline:3px solid var(--press-green); outline-offset:4px; border-radius:4px; }
-.press-masthead { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-bottom:64px; }
+.press-masthead { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-bottom:32px; }
 .press-masthead h1 { margin:0 0 8px; font-size:24px; font-weight:650; }
 .press-masthead p { color:var(--press-muted); margin:0; }
 .press-masthead>a { display:flex; align-items:center; min-height:44px; white-space:nowrap; color:var(--press-green); font-size:14px; }
@@ -76,7 +76,7 @@ header svg { vertical-align:middle; }
 @media(max-width:1000px) { .press-lead-grid,.press-latest-grid { gap:24px; }.press-lead-story h2 { font-size:32px; }.press-briefs h3 { font-size:17px; } }
 @media(max-width:680px) {
  .press-home-page .wrapper main .container,#header-mobile .header-wrapper,.press-footer-inner { padding-inline:20px; }
- .press-home { padding:80px 0 48px; }.press-masthead { padding-bottom:40px; }.press-masthead h1 { font-size:20px; }.press-masthead p { font-size:14px; }.press-masthead>a { display:none; }
+ .press-home { padding:80px 0 48px; }.press-masthead { padding-bottom:24px; }.press-masthead h1 { font-size:20px; }.press-masthead p { font-size:14px; }.press-masthead>a { display:none; }
  .press-lead-grid { display:block; padding:0 0 40px; }.press-lead-story h2 { font-size:26px; margin:12px 0; }.press-lead-story>p { font-size:16px; -webkit-line-clamp:2; }.press-lead-image { margin-bottom:16px; }
  .press-briefs { padding:40px 0 0; }.press-briefs h3 { font-size:17px; }.press-briefs article { padding:24px 0; }
  .press-topics { gap:8px; }.press-topics span { display:none; }.press-topics a { padding-inline:16px; }
