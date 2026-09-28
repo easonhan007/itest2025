@@ -7,9 +7,7 @@ body.press-column-page,body.press-column-page[theme="dark"] { background:var(--p
 .column-page a:hover { color:var(--press-green); }
 .column-page a:focus-visible { outline:3px solid var(--press-green); outline-offset:4px; border-radius:4px; }
 .column-page h1,.column-page h2,.column-page h3 { line-height:1.45; text-align:left; overflow-wrap:anywhere; }
-.press-column-page .column-heading,.press-column-page .column-heading:hover { background:transparent; box-shadow:none; padding-bottom:40px; border-bottom:1px solid var(--press-line); margin-bottom:40px; }
-.column-breadcrumb { display:flex; flex-wrap:wrap; align-items:center; gap:10px; color:var(--press-muted); font-size:13px; margin-bottom:20px; }
-.column-breadcrumb a { display:inline-flex; align-items:center; min-height:28px; }
+.press-column-page .column-heading,.press-column-page .column-heading:hover { background:transparent; box-shadow:none; padding-bottom:40px; border-bottom:1px solid var(--press-line); margin-bottom:24px; }
 .column-heading h1 { font-size:36px; font-weight:650; margin:0 0 12px; }
 .column-intro { display:flex; justify-content:space-between; align-items:baseline; gap:20px; }
 .column-intro p { margin:0; color:var(--press-muted); font-size:16px; }
@@ -53,11 +51,17 @@ body.press-column-page,body.press-column-page[theme="dark"] { background:var(--p
 .column-video-body h2 { font-size:21px; font-weight:600; margin:12px 0; }
 .column-video-body .column-summary { font-size:15px; }
 .column-empty { padding:40px 0; color:var(--press-muted); }
+@media(min-width:681px) {
+ .column-items>.column-item:first-child { padding-top:0; }
+ .column-year>h2 { margin-top:0; }
+}
 @media(max-width:1100px) { .column-category-grid,.column-video-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.column-year { grid-template-columns:80px minmax(0,1fr); gap:24px; } }
 @media(max-width:680px) {
  .press-column-page .wrapper main .container { padding-inline:20px; }
- .column-page { padding:88px 0 48px; }.column-heading { margin-bottom:24px; padding-bottom:24px; }.column-heading h1 { font-size:28px; }.column-breadcrumb { margin-bottom:16px; }
- .column-intro { display:block; }.column-intro p { font-size:15px; margin-bottom:12px; }
+ .column-page { padding:72px 0 48px; }
+ .press-column-page .column-heading,.press-column-page .column-heading:hover { margin-bottom:24px; padding-bottom:16px; }
+ .column-heading h1 { font-size:28px; margin-bottom:8px; }
+ .column-intro { display:block; }.column-intro p { font-size:15px; margin-bottom:8px; }
  .column-year { display:block; margin-bottom:28px; }.column-year>h2 { font-size:22px; margin:0; }.column-item h3 { font-size:20px; }.column-summary { font-size:15px; }
  .column-category-grid,.column-video-grid { grid-template-columns:minmax(0,1fr); gap:20px; }.column-category-card { padding:24px; }
  .column-tags { gap:12px; }.column-tags>a { gap:12px; padding-inline:14px; }
