@@ -21,6 +21,7 @@ body.press-home-page,body.press-post-page { background:var(--press-paper); color
 .press-cover { display:grid; position:relative; place-items:center; aspect-ratio:16/9; overflow:hidden; border-radius:8px; background:var(--press-soft); }
 .press-cover-label { color:var(--press-muted); font-size:16px; }
 .press-cover img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:var(--press-soft); }
+.press-lead-image .press-cover img { object-fit:cover; }
 .press-cover img[hidden] { display:none; }
 .press-story-meta { display:flex; flex-wrap:wrap; gap:8px 16px; font-size:12px; color:var(--press-muted); font-variant-numeric:tabular-nums; }
 .press-story-meta span:first-child { color:var(--press-green); font-weight:600; }
